@@ -45,7 +45,7 @@
 
 
         <ul>
-          <li><a class="buttons github" href="https://github.com/LoyolaCS750BigData/team3">Team GitHub</a></li>
+          <li><a class="buttons github" href="https://github.com/LoyolaCS750BigData/team3">Team 3 GitHub</a></li>
           <li><a class="buttons github" href="https://github.com/jboverfelt/jboverfelt.github.io">Page Source</a></li>
         </ul>
 
@@ -113,11 +113,11 @@ d3.csv("data/businesses-by-state.csv", function(error, data) {
 </div>
 <script>
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
+var margin = {top: 20, right: 20, bottom: 30, left: 100},
+    width = 950 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-//var formatPercent = d3.format(".0%");
+var formatDollars = d3.format(",3f");
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -132,6 +132,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
+    .tickFormat(formatDollars);
 
 var richest = d3.select("#richest-states-section").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -146,6 +147,7 @@ d3.csv("data/richest-states.csv", type, function(error, data) {
   richest.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
+      .attr("font-size", "x-small")
       .call(xAxis);
 
   richest.append("g")
@@ -153,6 +155,7 @@ d3.csv("data/richest-states.csv", type, function(error, data) {
       .call(yAxis)
       .append("text")
       .attr("transform", "rotate(-90)")
+      .attr("font-size", "x-small")
       .attr("y", 6)
       .attr("dy", ".75em")
       .style("text-anchor", "end")
