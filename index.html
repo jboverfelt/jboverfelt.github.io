@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <style>
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
 
   .arc path {
     stroke: #fff;
@@ -24,6 +29,7 @@
   .axis line {
     fill: none;
     stroke: #000;
+    stroke-width: 1;
     shape-rendering: crispEdges;
   }
 
@@ -60,6 +66,12 @@
 
       </header>
       <section>
+<div id="reviews-by-income-level-section">
+<h3>
+<a name="reviews-by-income-level" class="anchor" href="#reviews-by-income-level"><span class="octicon octicon-link"></span></a>Number of Reviews vs. Income Level (Both Datasets)</h3>
+<img src="images/incomeReviews.png" />
+</div>
+
 <div id="businesses-by-state-section">
 <h3>
 <a name="businesses-by-state-graph" class="anchor" href="#businesses-by-state"><span class="octicon octicon-link"></span></a>Businesses By State (Yelp Business Data)</h3>
