@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Server-Sent Events</title>
+	
+	<meta name="description" content="">
+	<meta name="image" content="">
+	
+	<meta itemprop="name" content="Server-Sent Events">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+	
+	<meta name="og:title" content="Server-Sent Events">
+	<meta name="og:description" content="">
+	
+	<meta name="og:url" content="https://jbo.io/posts/server-sent-events/">
+	<meta name="og:site_name" content="Server-Sent Events">
+	<meta name="og:type" content="article">
+	
+	<meta name="article:tag" content="">
+	<link rel="stylesheet" type="text/css" href="https://jbo.io/css/style.css">
+	
+	
+</head>
+
+<body>
+
+<header>
+	
+	<a href="https://jbo.io/" style="float: left;color:#ff3b30;">Justin Overfelt</a>
+	
+	&nbsp;&nbsp;<a href="https://jbo.io/about/" style="color:#777;">About</a>
+	
+	<a href="https://jbo.io/posts/index.xml" style="color:#777;float: right;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+</header>
+
+
+<div class="content">
+  <h1>Server-Sent Events</h1>
+  <aside></aside>
+  <p>
+
+<p>Often when the topic of web application notifications comes up, us web developers are quick to reach for WebSockets. There exists a wealth of information on them in the blogosphere and most importantly: on StackOverflow. However, WebSockets are too big a hammer for many of the cases in which they are most commonly used. Instead, I&rsquo;d like you introduce you to <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events">Server Sent Events</a>.</p>
+
+<h3 id="why-use-sse">Why use SSE?</h3>
+
+<p>Unlike WebSockets, Server-Sent Events are for one-way communication (server pushes to client). When you&rsquo;re implementing live notifications, this is all you typically need. If you really need full-duplex communication between client and server (maybe you&rsquo;re making a chat app), well, then stick to WebSockets.</p>
+
+<p>I find the main benefit of SSE to be its simplicity - it&rsquo;s just HTTP(S)! When using WebSockets, the connection starts as HTTP, but an &ldquo;Upgrade&rdquo; request is sent and the connection is no longer plain HTTP. With SSE, you can continue to write HTTP handlers the way you always have in the language and framework of your choice. You just set some headers, and then write data to the client as you normally would (well, in a simple text format I&rsquo;ll detail below&hellip;). This means you don&rsquo;t have to change anything about your web proxy or any other part of your stack. Feel free to continue to use the same authentication you use for all your other HTTP handlers. Sysadmins love it!</p>
+
+<p>Furthermore, the JavaScript interface for working with Server-Sent Events handles automatic reconnects! The reconnect time is even configurable. With all that said, let&rsquo;s move onto the SSE protocol.</p>
+
+<h3 id="the-sse-protocol">The SSE Protocol</h3>
+
+<p>The SSE protocol is text-based, and has mercifully few concepts to learn. If all you want to do is send a line of text to the client, this is the format:</p>
+
+<pre><code>data: something happened!\n\n
+</code></pre>
+
+<p>The second newline means &ldquo;send the message&rdquo;. The first newline is there in case you want to send messages that span more than one line. This is useful for sending JSON:</p>
+
+<pre><code>data: {\n
+data: &quot;foo&quot;: &quot;bar&quot;\n
+data: }\n\n
+</code></pre>
+
+<p>Now, it may be the case that you want to have different kinds of messages in the same &ldquo;pipe&rdquo;. Maybe a table is being updated by others and rows can be added or removed. You want to notify the user of both kinds of changes. Well, SSE has you covered there too with the &ldquo;event&rdquo; tag:</p>
+
+<pre><code>event: add\n
+data: added one\n\n
+
+event: delete\n
+data: deleted one\n\n
+</code></pre>
+
+<p>Finally, you can give events ids with the &ldquo;id&rdquo; tag:</p>
+
+<pre><code>id: 1\n
+data: i'm one!\n\n
+</code></pre>
+
+<p>It&rsquo;s past time to give the people what they want: code samples! All server-side code in this post will be in <a href="https://golang.org">Go</a>, but it should translate to the language of your choice easily.</p>
+
+<h3 id="the-backend">The Backend</h3>
+
+<p>The implementation of a full SSE server is out of the scope of this blog post (which is already too long), if you&rsquo;d like something more in-depth for Go, I heartily recommend <a href="https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go">this</a> post from ThoughtBot.</p>
+
+<p>Instead, we&rsquo;ll cover the basics of writing an HTTP handler to do Server-Sent Events in Go. As is customary for lazy bloggers like myself, I&rsquo;ve elided error handling. Furthermore, the code assumes you have a some sort of broker which hands out channels (little typesafe queues that Go provides) for clients to read from. This broker also allows ID generation and registering/deregistering clients. Don&rsquo;t get bogged down here, just think &ldquo;this broker returns things that we can read messages from&rdquo;. More information on doing this is in the ThoughtBot blog post referenced earlier. I haven&rsquo;t included that here because it will be heavily dependent on your use case.</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+
+<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+	<span style="color:#408080;font-style:italic">// set up the fictional broker
+</span><span style="color:#408080;font-style:italic"></span>	broker <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>Broker{}
+	http.<span style="color:#00f">HandleFunc</span>(<span style="color:#00f">eventHandler</span>(broker))
+
+	http.<span style="color:#00f">ListenAndServe</span>(<span style="color:#ba2121">&#34;:3131&#34;</span>, <span style="color:#008000;font-weight:bold">nil</span>)
+}
+
+<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">eventHandler</span>(broker <span style="color:#666">*</span>Broker) http.HandlerFunc {
+	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">func</span>(w http.ResponseWriter, r <span style="color:#666">*</span>http.Request) {
+		id <span style="color:#666">:=</span> broker.<span style="color:#00f">GenerateID</span>()
+		msgChan <span style="color:#666">:=</span> broker.<span style="color:#00f">RegisterNewClient</span>(id)
+
+		w.<span style="color:#00f">Header</span>().<span style="color:#00f">Set</span>(<span style="color:#ba2121">&#34;Content-Type&#34;</span>, <span style="color:#ba2121">&#34;text/event-stream&#34;</span>)
+		w.<span style="color:#00f">Header</span>().<span style="color:#00f">Set</span>(<span style="color:#ba2121">&#34;Cache-Control&#34;</span>, <span style="color:#ba2121">&#34;no-cache&#34;</span>)
+		w.<span style="color:#00f">Header</span>().<span style="color:#00f">Set</span>(<span style="color:#ba2121">&#34;Connection&#34;</span>, <span style="color:#ba2121">&#34;keep-alive&#34;</span>)
+
+		<span style="color:#408080;font-style:italic">// in real code, check to make sure this cast works!
+</span><span style="color:#408080;font-style:italic"></span>		flusher, _ <span style="color:#666">:=</span> w.(http.Flusher)
+
+		<span style="color:#008000;font-weight:bold">for</span> {
+			<span style="color:#008000;font-weight:bold">select</span> {
+			<span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>msgChan:
+				fmt.<span style="color:#00f">Fprintf</span>(w, <span style="color:#ba2121">&#34;data: %s\n\n&#34;</span>, msg)
+				flusher.<span style="color:#00f">Flush</span>()
+			<span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>r.<span style="color:#00f">Context</span>().<span style="color:#00f">Done</span>():
+				broker.<span style="color:#00f">DeregisterClient</span>(id)
+				<span style="color:#008000;font-weight:bold">return</span>
+			}
+		}
+	}
+}</code></pre></div>
+<p>Ok, there are some things to unpack here. I don&rsquo;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:</p>
+
+<ul>
+<li>The setting of the headers, specifically the Content-Type header. This <strong>must</strong> be set to <code>text/event-stream</code>. The other headers are for ensuring that the browser doesn&rsquo;t cache messages and telling it that this connection will be long-lived.</li>
+<li>Writing data out to the client with <code>Fprintf</code>. We&rsquo;re using the aforementioned format here with the <code>data:</code> tag.</li>
+<li>The &ldquo;infinite&rdquo; for loop, which writes data to the client until the user navigates away from the page.</li>
+</ul>
+
+<p>I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&rsquo;t want updates anymore.</p>
+
+<h3 id="the-frontend">The Frontend</h3>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource">EventSource</a> interface is all you need!</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#008000;font-weight:bold">var</span> client <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> EventSource(<span style="color:#ba2121">&#34;https://mysite.local:3131&#34;</span>)
+client.onmessage <span style="color:#666">=</span> (e) =&gt; { console.log(e.data) }
+</code></pre></div>
+<p><code>onerror</code> and <code>onopen</code> handlers are also available for handling errors and performing tasks when the connection is opened.</p>
+
+<p>You might do any number of things in the <code>onmessage</code> handler, perhaps rendering a new row in a table, or adding the line of data you just received to an array and having Vue/React/etc rerender your component!</p>
+
+<p>If you broke up your events by type like I mentioned earlier, you can set up your handlers like this:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">client.addEventListener(<span style="color:#ba2121">&#39;add&#39;</span>, (e) =&gt; { console.log(e.data) }, <span style="color:#008000;font-weight:bold">false</span>)
+client.addEventListener(<span style="color:#ba2121">&#39;delete&#39;</span>, (e) =&gt; { console.log(e.data) }, <span style="color:#008000;font-weight:bold">false</span>)
+</code></pre></div>
+<h3 id="thanks">Thanks!</h3>
+
+<p>I hope you&rsquo;ve enjoyed this post. Hit me up on <a href="https://mastodon.sdf.org/@jboverf">Mastodon</a>, especially if I did something wrong!</p>
+</p>
+</div>
+
+
+  <p>Written on Mar 17, 2019.</p>
+
+
+<footer>
+	<p>&copy; 2019 All rights reserved.</p>
+</footer>
+</body>
+</html>
