@@ -128,9 +128,11 @@ data: i'm one!\n\n
 <p>Ok, there are some things to unpack here. I don&rsquo;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:</p>
 
 <ul>
-<li>The setting of the headers, specifically the Content-Type header. This <strong>must</strong> be set to <code>text/event-stream</code>. The other headers are for ensuring that the browser doesn&rsquo;t cache messages and telling it that this connection will be long-lived.</li>
-<li>Writing data out to the client with <code>Fprintf</code>. We&rsquo;re using the aforementioned format here with the <code>data:</code> tag.</li>
-<li>The &ldquo;infinite&rdquo; for loop, which writes data to the client until the user navigates away from the page.</li>
+<li><p>The setting of the headers, specifically the Content-Type header. This <strong>must</strong> be set to <code>text/event-stream</code>. The other headers are for ensuring that the browser doesn&rsquo;t cache messages and telling it that this connection will be long-lived.</p></li>
+
+<li><p>Writing data out to the client with <code>Fprintf</code>. We&rsquo;re using the aforementioned format here with the <code>data:</code> tag.</p></li>
+
+<li><p>The &ldquo;infinite&rdquo; for loop, which writes data to the client until the user navigates away from the page.</p></li>
 </ul>
 
 <p>I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&rsquo;t want updates anymore.</p>

@@ -129,9 +129,11 @@ data: i&#39;m one!\n\n
 &lt;p&gt;Ok, there are some things to unpack here. I don&amp;rsquo;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The setting of the headers, specifically the Content-Type header. This &lt;strong&gt;must&lt;/strong&gt; be set to &lt;code&gt;text/event-stream&lt;/code&gt;. The other headers are for ensuring that the browser doesn&amp;rsquo;t cache messages and telling it that this connection will be long-lived.&lt;/li&gt;
-&lt;li&gt;Writing data out to the client with &lt;code&gt;Fprintf&lt;/code&gt;. We&amp;rsquo;re using the aforementioned format here with the &lt;code&gt;data:&lt;/code&gt; tag.&lt;/li&gt;
-&lt;li&gt;The &amp;ldquo;infinite&amp;rdquo; for loop, which writes data to the client until the user navigates away from the page.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The setting of the headers, specifically the Content-Type header. This &lt;strong&gt;must&lt;/strong&gt; be set to &lt;code&gt;text/event-stream&lt;/code&gt;. The other headers are for ensuring that the browser doesn&amp;rsquo;t cache messages and telling it that this connection will be long-lived.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Writing data out to the client with &lt;code&gt;Fprintf&lt;/code&gt;. We&amp;rsquo;re using the aforementioned format here with the &lt;code&gt;data:&lt;/code&gt; tag.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The &amp;ldquo;infinite&amp;rdquo; for loop, which writes data to the client until the user navigates away from the page.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&amp;rsquo;t want updates anymore.&lt;/p&gt;
