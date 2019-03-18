@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Justin Overfelt</title>
-    <link>https://jbo.io/</link>
-    <description>Recent content on Justin Overfelt</description>
+    <title>Golang on Justin Overfelt</title>
+    <link>https://jbo.io/tags/golang/</link>
+    <description>Recent content in Golang on Justin Overfelt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Mar 2019 18:12:10 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 17:47:41 -0400</lastBuildDate>
     
-        <atom:link href="https://jbo.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://jbo.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://jbo.io/about/</link>
-      <pubDate>Sun, 17 Mar 2019 18:12:10 -0400</pubDate>
-      
-      <guid>https://jbo.io/about/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;m a software developer who enjoys working at all points in the stack, from
-configuring servers and databases to writing frontend code. I currently work primarily
-in Go for backend code and Vue.js for frontend development, though I have extensive Java
-experience along with some Ruby and Clojure.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve had several ideas for blog posts over the last few years and decided I should write some of those
-up! Feel free to drop me a line on Mastodon (link below).&lt;/p&gt;
-
-&lt;p&gt;Selected projects can be found at the link to my GitHub below.&lt;/p&gt;
-
-&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a rel=&#34;me&#34; href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jboverfelt&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>Server-Sent Events</title>
