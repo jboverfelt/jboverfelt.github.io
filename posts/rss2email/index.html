@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>The Best RSS Reader Is Your Inbox</title>
+	
+	<meta name="description" content="">
+	<meta name="image" content="">
+	
+	<meta itemprop="name" content="The Best RSS Reader Is Your Inbox">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+	
+	<meta name="og:title" content="The Best RSS Reader Is Your Inbox">
+	<meta name="og:description" content="">
+	
+	<meta name="og:url" content="https://jbo.io/posts/rss2email/">
+	<meta name="og:site_name" content="The Best RSS Reader Is Your Inbox">
+	<meta name="og:type" content="article">
+	
+	<meta name="article:tag" content="rss atom email rss2email ">
+	<link rel="stylesheet" type="text/css" href="https://jbo.io/css/style.css">
+	
+	
+</head>
+
+<body>
+
+<header>
+	
+	<a href="https://jbo.io/" style="float: left;color:#ff3b30;">Justin Overfelt</a>
+	
+	&nbsp;&nbsp;<a href="https://jbo.io/about/" style="color:#777;">About</a>
+	
+	<a href="https://jbo.io/posts/index.xml" style="float: right;"><img class="feather" src="https://jbo.io/feed.svg" height="23px" width="16px" /></a>
+	<a rel="me" href="https://mastodon.sdf.org/@jboverf" style="float:right; margin-right: 6px;"><img class="feather" src="https://jbo.io/mastodon-simple.svg" height="23px" width="16px" /></a>
+	<a href="https://github.com/jboverfelt" style="float:right; margin-right: 6px;"><img class="feather" src="https://jbo.io/github.svg" height="23px" width="16px" /></a>
+</header>
+
+
+<div class="content">
+  <h1>The Best RSS Reader Is Your Inbox</h1>
+  <aside><a href="/tags/rss/">rss</a></a>&nbsp;&nbsp;&nbsp;<a href="/tags/atom/">atom</a></a>&nbsp;&nbsp;&nbsp;<a href="/tags/email/">email</a></a>&nbsp;&nbsp;&nbsp;<a href="/tags/rss2email/">rss2email</a></a>&nbsp;&nbsp;&nbsp;</aside>
+  <p>
+
+<p>I was very late to the RSS game, especially for a programmer. It wasn&rsquo;t until a little over a year ago that I got serious about making RSS/Atom a part of my daily content diet. Since that time, I&rsquo;ve used a few readers, namely <a href="https://www.inoreader.com">Inoreader</a> and an instance of <a href="https://tt-rss.org/">Tiny Tiny RSS</a> lovingly hosted by <a href="https://sdf.org">SDF</a> for the benefit of MetaARPA members like myself. I enjoyed both those products, but it always felt a bit like my feeds were &ldquo;locked away&rdquo; (even though OPML export is easy in both tools).</p>
+
+<p>It finally dawned on me over the last week or so that all RSS readers (that I&rsquo;ve used anyway) really just reinvent email. There&rsquo;s folders the navigate things and &ldquo;stars&rdquo; to save articles you want to refer to later. There&rsquo;s the concept of read and unread articles. You can load images or just view text. Sometimes the full content is available, other times there&rsquo;s just a link. Most importantly, I find that RSS readers implement &ldquo;rules&rdquo; that do not compare to what is available from various email clients. I thought to myself: &ldquo;I bet I could write a tool that scraped RSS feeds and sent emails very easily!&rdquo;. Turns out, I&rsquo;m far from the first to have this idea (much like many of my ideas).</p>
+
+<h3 id="rss2email">rss2email</h3>
+
+<p>Enter <a href="https://github.com/rss2email/rss2email">rss2email</a>. It appears this tool has been around for quite a while and I&rsquo;m very late to the game (again). I imported my aforementioned OPML file with <code>r2e opmlimport</code> and I was off to the races. Well&hellip;sort of. You have to configure a way to send email of course! Since I was running this on the SDF Cluster, I was able to use their SMTP server by adjusting the config file (<code>~/.config/rss2email.cfg</code>). By default, it wants to use sendmail and to be honest I was more comfortable with straight SMTP. The key setting here is <code>email-protocol</code>. There are other SMTP settings in there that were pretty clear in my opinion.</p>
+
+<p>Time to read some feeds! Be sure to invoke <code>r2e run</code> the first time with the <code>--no-send</code> flag or be prepared for a deluge of email as it sends you everything from all your feeds! After that, <code>r2e run</code> will suffice. Helpfully, r2e has <code>-V</code> flags that control the verbosity of its output. Once you have a manual run that worked, I&rsquo;d recommend setting up a cron job to run it on a schedule.</p>
+
+<p>Once I got all that working, I perused the other options in the config file, including some for HTML mail. I don&rsquo;t typically like HTML mail, but the formatting used by default when you enable HTML is very light. There is a &ldquo;digest&rdquo; mode that sends one email for each feed for a given run, but it attaches the articles as emails to the digest email, which was off-putting to me. Maybe you like that. In any case, hopefully this helps someone else even later to the game than me!</p>
+
+<h3 id="other-options">Other Options</h3>
+
+<p>A quick web search indicates that there are services out there which will do this for you, though many seem to be targeted at businesses wanting to email their customers when they have a new post. One of those products might work better if you aren&rsquo;t able to set up rss2email for whatever reason!</p>
+
+<h3 id="thanks">Thanks!</h3>
+
+<p>I hope you&rsquo;ve enjoyed this post. Hit me up on <a href="https://mastodon.sdf.org/@jboverf">Mastodon</a> with any questions or comments!</p>
+</p>
+</div>
+
+
+  <p>Written on Apr 3, 2019.</p>
+
+
+<footer>
+	<p>&copy; 2019 All rights reserved.</p>
+</footer>
+</body>
+</html>
