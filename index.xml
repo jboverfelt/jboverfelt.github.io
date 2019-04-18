@@ -57,6 +57,14 @@ experience along with some Ruby and Clojure.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve had several ideas for blog posts over the last few years and decided I should write some of those
 up! Feel free to drop me a line on Mastodon (link below).&lt;/p&gt;
 
+&lt;p&gt;I also maintain a phlog (A blog using the Gopher protocol) here:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gopher://colorfield.space/~jboverf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The phlog mostly contains shorter form writings on tech and other topics. There are several
+browsers that support gopher out there, I recommend Lynx.&lt;/p&gt;
+
 &lt;p&gt;Selected projects can be found at the link to my GitHub below.&lt;/p&gt;
 
 &lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;
