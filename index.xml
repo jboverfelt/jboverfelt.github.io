@@ -6,10 +6,82 @@
     <description>Recent content on Justin Overfelt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Apr 2019 20:28:42 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 10:35:48 -0400</lastBuildDate>
     
         <atom:link href="https://jbo.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reviving a Raspberry Pi with NetBSD</title>
+      <link>https://jbo.io/posts/rpi-netbsd/</link>
+      <pubDate>Tue, 23 Apr 2019 10:35:48 -0400</pubDate>
+      
+      <guid>https://jbo.io/posts/rpi-netbsd/</guid>
+      <description>
+
+&lt;p&gt;I started getting into BSDs (specifically NetBSD) as a result of my membership in &lt;a href=&#34;https://sdf.org&#34;&gt;SDF&lt;/a&gt;. I have a good deal of Linux experience but hadn&amp;rsquo;t really had a good reason to try out one of the BSD operating systems. I remembered I had a first-gen Raspberry Pi (Model B) languishing in my desk drawer and decided to put NetBSD&amp;rsquo;s slogan (&amp;ldquo;Of course it runs NetBSD!&amp;rdquo;) to the test.&lt;/p&gt;
+
+&lt;p&gt;The Model B features a 32-bit armv6 chip and 256MB of RAM (!). I poked around on the NetBSD homepage and found &lt;a href=&#34;http://wiki.netbsd.org/ports/evbarm/raspberry_pi/#index2h1&#34;&gt;this&lt;/a&gt; page which told me &amp;ldquo;earmv6hf&amp;rdquo; was the NetBSD port I wanted for an rpi 1.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://opensource.com/article/19/3/netbsd-raspberry-pi&#34;&gt;This article&lt;/a&gt; on opensource.com does a fantastic job of showing the initial steps to get it running, and I won&amp;rsquo;t attempt to reproduce those here. Instead, I want to fill in some gaps.&lt;/p&gt;
+
+&lt;h3 id=&#34;wifi&#34;&gt;WiFi&lt;/h3&gt;
+
+&lt;p&gt;So you&amp;rsquo;ve followed the opensource.com article above and you&amp;rsquo;re sitting at a root prompt with your Pi hooked up to a TV and a keyboard plugged into one of the two USB ports. Now, you want to be able to use the Pi as a &amp;ldquo;server&amp;rdquo; and stash it somewhere. Unfortunately, Pis this old don&amp;rsquo;t have onboard WiFi, so you&amp;rsquo;ll need an adapter. This is one area where NetBSD is a bit rough around the edges: the WiFi adapter support isn&amp;rsquo;t as strong as some Linux distributions. Even if your Pi has onboard WiFi, it is unlikely that NetBSD supports it.&lt;/p&gt;
+
+&lt;p&gt;I used &lt;a href=&#34;https://www.amazon.com/gp/product/B003MTTJOY/&#34;&gt;this&lt;/a&gt; adapter and I know that it works out of the box with NetBSD 8.0. If that Amazon link ever dies, the adapter is the Edimax EW-7811Un. Be aware that this adapter does not have dual-band support, so you&amp;rsquo;ll have to stick with 802.11n. This means you can&amp;rsquo;t use the 5GHz band of your router.&lt;/p&gt;
+
+&lt;p&gt;Once you have the adapter, shut down the pi at the root prompt with &lt;code&gt;shutdown -p now&lt;/code&gt;. You&amp;rsquo;ll eventually see a message saying &amp;ldquo;press any key to restart&amp;rdquo;. Once you see this, unplug the Pi. Now, plug in the Edimax adapter to the empty USB port and reconnect the Pi. When you&amp;rsquo;re back at your root prompt, follow the instructions &lt;a href=&#34;https://wiki.netbsd.org/tutorials/how_to_use_wpa_supplicant/&#34;&gt;here&lt;/a&gt; to set up wpa_supplicant, which is the NetBSD daemon that handles WPA/WPA2. I was able to copy/paste the &amp;ldquo;simple&amp;rdquo; example from the wpa_supplicant page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=wheel
+network={
+        ssid=&amp;quot;my favourite network&amp;quot;
+        psk=&amp;quot;hunter2&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I replaced the ssid and psk with my network&amp;rsquo;s info. The tutorial tells you to edit /etc/rc.conf and add the following lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wpa_supplicant=YES
+wpa_supplicant_flags=&amp;quot;-i iwn0 -c /etc/wpa_supplicant.conf&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;iwn0&lt;/code&gt; is a network interface - find yours by typing &lt;code&gt;ifconfig&lt;/code&gt; and looking for interface name whose address starts with &lt;code&gt;74:da:38&lt;/code&gt; (provided you&amp;rsquo;re using my recommended adapter). Mine is &lt;code&gt;urtwn0&lt;/code&gt;, so I replaced &lt;code&gt;iwn0&lt;/code&gt; in the above command with &lt;code&gt;urtwn0&lt;/code&gt;. Now you should be able to find the Pi on your network and SSH into it - no need for the TV anymore!&lt;/p&gt;
+
+&lt;h3 id=&#34;bash-issues&#34;&gt;bash issues&lt;/h3&gt;
+
+&lt;p&gt;After enabling bash as my shell per the opensource.com guide, I found that some things were not on my $PATH by default. I loaded a custom .bashrc file to get my normal aliases, and found that &amp;ldquo;pkg_add&amp;rdquo; was no longer on the PATH. Also, it seems that no .bash_profile is created by default in your user&amp;rsquo;s home directory. To fix both these issues, add the below lines to the newly-created ~/.bash_profile:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R7/bin:/usr/pkg/bin
+PATH=${PATH}:/usr/pkg/sbin:/usr/games:/usr/local/bin:/usr/local/sbin
+
+source .bashrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;pkgin&#34;&gt;pkgin&lt;/h3&gt;
+
+&lt;p&gt;The opensource.com guide talks about pkgsrc, which allows for the installation of both binary and source packages for NetBSD. If you&amp;rsquo;re coming from Linux though, you&amp;rsquo;re probably expecting something that works like yum or apt. pkgsrc does not work this way and crucially, it doesn&amp;rsquo;t have a great story for updates. &lt;a href=&#34;http://pkgin.net/&#34;&gt;Pkgin&lt;/a&gt; is what you&amp;rsquo;re looking for here. Run &lt;code&gt;pkg_add -v pkgin&lt;/code&gt; as root and then follow the guides on the pkgin homepage from there. Pkgin uses pkgsrc under the hood. Remember that your old Pi 1 is very underpowered, so expect package installations to take a while.&lt;/p&gt;
+
+&lt;p&gt;After you&amp;rsquo;ve installed pkgin, there will be a message telling you to run &lt;code&gt;pkgin update&lt;/code&gt;. Before you do this, check the file in /usr/pkg/etc/pkgin/repositories.conf. The url in there was wrong by default on my installation. For an rpi 1, it should be &lt;code&gt;ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/earmv6hf/8.0/All&lt;/code&gt;. Once that&amp;rsquo;s correct, run &lt;code&gt;pkgin update&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;assorted-gotchas&#34;&gt;Assorted gotchas&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Never&lt;/em&gt; unplug the Pi without running &lt;code&gt;shutdown -p now&lt;/code&gt; first and waiting a bit if you&amp;rsquo;re doing that over SSH. The older models seem especially sensitive to corruption of the SD card. If this happens to you, you&amp;rsquo;ll have to hook your Pi up to a TV again and single-user mode will be active. From there you can use &lt;code&gt;fsck -tufs -y /dev/&amp;lt;your sd card&amp;gt;&lt;/code&gt; You can typically find your sdcard name by running &lt;code&gt;fdisk&lt;/code&gt;. In many scenarios this will repair your disk. If it fails for some reason, well, GOTO the top of this guide and reimage.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Many of the tools you&amp;rsquo;re used to having out of the box in Linux distributions will not be installed. NetBSD is highly configurable and does not attempt to decide what you should use. Most things will be easily available on pkgin though.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;go-forth&#34;&gt;Go forth!&lt;/h3&gt;
+
+&lt;p&gt;Now you can install the packages you&amp;rsquo;re used to, like vim, git, etc. Happy hacking!&lt;/p&gt;
+
+&lt;h3 id=&#34;thanks&#34;&gt;Thanks!&lt;/h3&gt;
+
+&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Best RSS Reader Is Your Inbox</title>

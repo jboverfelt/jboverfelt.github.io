@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jbo.io/posts/rpi-netbsd/</loc>
+    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jbo.io/posts/rss2email/</loc>
     <lastmod>2019-04-03T20:28:42-04:00</lastmod>
   </url>
@@ -54,13 +59,31 @@
   
   <url>
     <loc>https://jbo.io/</loc>
-    <lastmod>2019-04-03T20:28:42-04:00</lastmod>
+    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jbo.io/tags/netbsd/</loc>
+    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jbo.io/posts/</loc>
-    <lastmod>2019-04-03T20:28:42-04:00</lastmod>
+    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jbo.io/tags/raspberrypi/</loc>
+    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jbo.io/tags/rpi/</loc>
+    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
     <priority>0</priority>
   </url>
   
