@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Images From The ISS</title>
+	
+	<meta name="description" content="">
+	<meta name="image" content="">
+	
+	<meta itemprop="name" content="Images From The ISS">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+	
+	<meta name="og:title" content="Images From The ISS">
+	<meta name="og:description" content="">
+	
+	<meta name="og:url" content="https://jbo.io/posts/iss-sstv/">
+	<meta name="og:site_name" content="Images From The ISS">
+	<meta name="og:type" content="article">
+	
+	<meta name="article:tag" content="radio space iss ">
+	<link rel="stylesheet" type="text/css" href="https://jbo.io/css/style.css">
+	
+	
+</head>
+
+<body>
+
+<header>
+	
+	<a href="https://jbo.io/" style="float: left;color:#ff3b30;">Justin Overfelt</a>
+	
+	&nbsp;&nbsp;<a href="https://jbo.io/about/" style="color:#777;">About</a>
+	
+	<a href="https://jbo.io/posts/index.xml" style="float: right;"><img class="feather" src="https://jbo.io/feed.svg" height="23px" width="16px" /></a>
+	<a rel="me" href="https://mastodon.sdf.org/@jboverf" style="float:right; margin-right: 6px;"><img class="feather" src="https://jbo.io/mastodon-simple.svg" height="23px" width="16px" /></a>
+	<a href="https://github.com/jboverfelt" style="float:right; margin-right: 6px;"><img class="feather" src="https://jbo.io/github.svg" height="23px" width="16px" /></a>
+</header>
+
+
+<div class="content">
+  <h1>Images From The ISS</h1>
+  <aside><a href="/tags/radio/">radio</a></a>&nbsp;&nbsp;&nbsp;<a href="/tags/space/">space</a></a>&nbsp;&nbsp;&nbsp;<a href="/tags/iss/">iss</a></a>&nbsp;&nbsp;&nbsp;</aside>
+  <p>
+
+<p>Last year I became a licensed amateur radio operator, first getting my Technician license and ultimately getting my General class license a month or so later. While I was a Technician class operator with limited privileges on the HF bands, I sought out things to do with my full rights on the VHF and UHF bands.</p>
+
+<p>Turns out, there are quite a few satellites in Low Earth Orbit that are usable by ham radio operators to communicate with one another over long distances. They&rsquo;re basically signal repeaters in the sky. Anyway, this post is not about those satellites, it&rsquo;s about the International Space Station (ISS). The ISS has similar capabilities to the amateur satellites I mentioned - you can even talk to the crew sometimes! One other thing the ISS can do is send images receivable by anyone with a handheld radio or RTL-SDR.</p>
+
+<h3 id="slow-scan-television">Slow-Scan Television</h3>
+
+<p>The ISS crew sends these images on a VHF frequency (145.800 MHz) using a mode called Slow-Scan Television (SSTV). It&rsquo;s essentially images over radio and <a href="https://www.sigidwiki.com/wiki/SSTV">it sounds like this</a>. Typically the images are sent by the ISS crew to commemorate specific events and the broadcast times are <a href="https://ariss-sstv.blogspot.com/">announced in advance</a>.</p>
+
+<p>Amateur radio operators also use SSTV on the HF bands to send each other serious content (memes). IMO there&rsquo;s no better way to send memes than over radio!</p>
+
+<h3 id="receiving-the-signal">Receiving the Signal</h3>
+
+<p>As I mentioned, there are many ways of receiving and decoding the SSTV signal from the ISS, but you&rsquo;ll need 5 basic things:</p>
+
+<ul>
+<li><p>A receiver that can pull in FM signals on 145.800 MHz. This could be a handheld radio that has coverage on that frequency or something general like an RTL-SDR</p></li>
+
+<li><p>An antenna: I&rsquo;ve found that the signals sent by the ISS are pretty strong and can be received with even a marginal antenna like the dipole that comes with the RTL-SDR</p></li>
+
+<li><p>Pass-prediction software: The ISS is not geosynchronous like the satellites that stream television or radio - it moves through the sky. Plug &ldquo;ISS pass prediction&rdquo; into your favorite search engine or just use the ISS Detector app like I do.</p></li>
+
+<li><p>A clear view of the sky: self explanatory</p></li>
+
+<li><p>Decoding software: Something to turn the sounds into an image. Again, searching &ldquo;SSTV decoding software&rdquo; will turn up answers, but I use the Robot36 app on Android. The ISS typically uses the &ldquo;PD120&rdquo; format.</p></li>
+</ul>
+
+<h3 id="my-method">My Method</h3>
+
+<p>I have an antenna specifically designed for working Low-Earth Orbit satellites called an Arrow Antenna, but I&rsquo;ve been told that a more basic antenna works fine. I connected that antenna to my handheld transceiver (Yaesu FT-60R) and opened the Robot36 app on my phone. I then made sure the phone was close to the radio and turned the volume up on the FT-60R. Since I was using a highly directional antenna, I used the ISS Detector app to help me point it correctly at the sky. The Robot36 app began decoding once it heard the start of the image signal, ultimately producing this</p>
+
+<p><img src="/20191231-iss-sstv-cropped.jpg" alt="ISS SSTV image" /></p>
+
+<p>which I saved off from my phone and cropped a bit. Not bad for an image from space! You&rsquo;ll note the Russian on the image - this SSTV event was run by the Russian side of the ISS.</p>
+
+<h3 id="thanks">Thanks!</h3>
+
+<p>I hope you&rsquo;ve enjoyed this post. Hit me up on <a href="https://mastodon.sdf.org/@jboverf">Mastodon</a> with any questions or comments!</p>
+</p>
+</div>
+
+
+  <p>Written on Jan 15, 2020.</p>
+
+
+<footer>
+	<p>&copy; 2020 All rights reserved.</p>
+</footer>
+</body>
+</html>

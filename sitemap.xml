@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jbo.io/posts/iss-sstv/</loc>
+    <lastmod>2020-01-15T19:51:43-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jbo.io/posts/rpi-netbsd/</loc>
     <lastmod>2019-04-23T10:35:48-04:00</lastmod>
   </url>
@@ -52,6 +57,12 @@
   </url>
   
   <url>
+    <loc>https://jbo.io/tags/iss/</loc>
+    <lastmod>2020-01-15T19:51:43-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jbo.io/tags/javascript/</loc>
     <lastmod>2019-03-17T17:47:41-04:00</lastmod>
     <priority>0</priority>
@@ -59,7 +70,7 @@
   
   <url>
     <loc>https://jbo.io/</loc>
-    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
+    <lastmod>2020-01-15T19:51:43-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -71,7 +82,13 @@
   
   <url>
     <loc>https://jbo.io/posts/</loc>
-    <lastmod>2019-04-23T10:35:48-04:00</lastmod>
+    <lastmod>2020-01-15T19:51:43-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jbo.io/tags/radio/</loc>
+    <lastmod>2020-01-15T19:51:43-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -96,6 +113,12 @@
   <url>
     <loc>https://jbo.io/tags/rss2email/</loc>
     <lastmod>2019-04-03T20:28:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jbo.io/tags/space/</loc>
+    <lastmod>2020-01-15T19:51:43-05:00</lastmod>
     <priority>0</priority>
   </url>
   

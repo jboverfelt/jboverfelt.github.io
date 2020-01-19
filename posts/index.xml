@@ -6,10 +6,58 @@
     <description>Recent content in Posts on Justin Overfelt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Apr 2019 10:35:48 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 19:51:43 -0500</lastBuildDate>
     
         <atom:link href="https://jbo.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Images From The ISS</title>
+      <link>https://jbo.io/posts/iss-sstv/</link>
+      <pubDate>Wed, 15 Jan 2020 19:51:43 -0500</pubDate>
+      
+      <guid>https://jbo.io/posts/iss-sstv/</guid>
+      <description>
+
+&lt;p&gt;Last year I became a licensed amateur radio operator, first getting my Technician license and ultimately getting my General class license a month or so later. While I was a Technician class operator with limited privileges on the HF bands, I sought out things to do with my full rights on the VHF and UHF bands.&lt;/p&gt;
+
+&lt;p&gt;Turns out, there are quite a few satellites in Low Earth Orbit that are usable by ham radio operators to communicate with one another over long distances. They&amp;rsquo;re basically signal repeaters in the sky. Anyway, this post is not about those satellites, it&amp;rsquo;s about the International Space Station (ISS). The ISS has similar capabilities to the amateur satellites I mentioned - you can even talk to the crew sometimes! One other thing the ISS can do is send images receivable by anyone with a handheld radio or RTL-SDR.&lt;/p&gt;
+
+&lt;h3 id=&#34;slow-scan-television&#34;&gt;Slow-Scan Television&lt;/h3&gt;
+
+&lt;p&gt;The ISS crew sends these images on a VHF frequency (145.800 MHz) using a mode called Slow-Scan Television (SSTV). It&amp;rsquo;s essentially images over radio and &lt;a href=&#34;https://www.sigidwiki.com/wiki/SSTV&#34;&gt;it sounds like this&lt;/a&gt;. Typically the images are sent by the ISS crew to commemorate specific events and the broadcast times are &lt;a href=&#34;https://ariss-sstv.blogspot.com/&#34;&gt;announced in advance&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Amateur radio operators also use SSTV on the HF bands to send each other serious content (memes). IMO there&amp;rsquo;s no better way to send memes than over radio!&lt;/p&gt;
+
+&lt;h3 id=&#34;receiving-the-signal&#34;&gt;Receiving the Signal&lt;/h3&gt;
+
+&lt;p&gt;As I mentioned, there are many ways of receiving and decoding the SSTV signal from the ISS, but you&amp;rsquo;ll need 5 basic things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A receiver that can pull in FM signals on 145.800 MHz. This could be a handheld radio that has coverage on that frequency or something general like an RTL-SDR&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;An antenna: I&amp;rsquo;ve found that the signals sent by the ISS are pretty strong and can be received with even a marginal antenna like the dipole that comes with the RTL-SDR&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pass-prediction software: The ISS is not geosynchronous like the satellites that stream television or radio - it moves through the sky. Plug &amp;ldquo;ISS pass prediction&amp;rdquo; into your favorite search engine or just use the ISS Detector app like I do.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A clear view of the sky: self explanatory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Decoding software: Something to turn the sounds into an image. Again, searching &amp;ldquo;SSTV decoding software&amp;rdquo; will turn up answers, but I use the Robot36 app on Android. The ISS typically uses the &amp;ldquo;PD120&amp;rdquo; format.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;my-method&#34;&gt;My Method&lt;/h3&gt;
+
+&lt;p&gt;I have an antenna specifically designed for working Low-Earth Orbit satellites called an Arrow Antenna, but I&amp;rsquo;ve been told that a more basic antenna works fine. I connected that antenna to my handheld transceiver (Yaesu FT-60R) and opened the Robot36 app on my phone. I then made sure the phone was close to the radio and turned the volume up on the FT-60R. Since I was using a highly directional antenna, I used the ISS Detector app to help me point it correctly at the sky. The Robot36 app began decoding once it heard the start of the image signal, ultimately producing this&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://jbo.io/20191231-iss-sstv-cropped.jpg&#34; alt=&#34;ISS SSTV image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;which I saved off from my phone and cropped a bit. Not bad for an image from space! You&amp;rsquo;ll note the Russian on the image - this SSTV event was run by the Russian side of the ISS.&lt;/p&gt;
+
+&lt;h3 id=&#34;thanks&#34;&gt;Thanks!&lt;/h3&gt;
+
+&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Reviving a Raspberry Pi with NetBSD</title>
