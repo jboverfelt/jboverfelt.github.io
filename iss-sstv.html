@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="retro.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+<header>
+	<!-- Homepage Title -->
+	<nav>
+		<a href="/">Justin Overfelt</a>
+		<a class="page" href="/about.html">About</a>
+	</nav>
+	<!-- Show RSS feed in the header -->
+	<div class="links">
+		<a href="/index.xml"><img class="feather" src="/feed.svg" height="23px" width="16px" /></a>
+		<a rel="me" href="https://mastodon.sdf.org/@jboverf"><img class="feather" src="/mastodon-simple.svg" height="23px" width="16px" /></a>
+		<a href="https://github.com/jboverfelt"><img class="feather" src="/github.svg" height="23px" width="16px" /></a>
+	</div>
+</header>
+<h2 id="Images%20from%20the%20ISS">Images from the ISS</h2>
+
+<p>Last year I became a licensed amateur radio operator, first getting my Technician license and ultimately getting my General class license a month or so later. While I was a Technician class operator with limited privileges on the HF bands, I sought out things to do with my full rights on VHF and UHF frequencies.</p>
+
+<p>Turns out, there are quite a few satellites in Low Earth Orbit that are usable by ham radio operators to communicate with one another over long distances. They&#39;re basically signal repeaters in the sky. Anyway, this post is not about those satellites, it&#39;s about the International Space Station (ISS). The ISS has similar capabilities to the amateur satellites I mentioned - you can even talk to the crew sometimes! One other thing the ISS can do is send images receivable by anyone with a handheld radio or RTL-SDR.</p>
+
+<h3 id="Slow-Scan%20Television">Slow-Scan Television</h3>
+
+<p>The ISS crew sends these images on a VHF frequency (145.800 MHz) using a mode called Slow-Scan Television (SSTV). It&#39;s essentially images over radio and <a href="https://www.sigidwiki.com/wiki/SSTV">it sounds like this</a>. Typically the images are sent by the ISS crew to commemorate specific events and the broadcast times are <a href="https://ariss-sstv.blogspot.com/">announced in advance</a>.</p>
+
+<h3 id="Receiving%20the%20Signal">Receiving the Signal</h3>
+
+<p>As I mentioned, there are many ways of receiving and decoding the SSTV signal from the ISS, but you&#39;ll need 4 basic things:</p>
+
+<ul>
+<li><p>A receiver that can pull in FM signals on 145.800 MHz. This could be a handheld radio that has coverage on that frequency or something general like an RTL-SDR</p></li>
+<li><p>An antenna: I&#39;ve found that the signals sent by the ISS are pretty strong and can be received with even a marginal antenna like the dipole that comes with the RTL-SDR</p></li>
+<li><p>Pass-prediction software: The ISS is not geosynchronous like the satellites that stream television or radio. It moves through the sky. Plug &#8220;ISS pass prediction&#8221; into your favorite search engine or just use the ISS Detector app like I do.</p></li>
+<li><p>Decoding software: Something to turn the sounds into an image. Again, searching &#8220;SSTV decoding software&#8221; will turn up answers, but I use the Robot36 app on Android. The ISS typically uses the &#8220;PD120&#8221; format.</p></li>
+</ul>
+
+<h3 id="My%20Method">My Method</h3>
+
+<p>I have an antenna specifically designed for working Low-Earth Orbit satellites called an Arrow Antenna, but I&#39;ve been told that more basic antenna work fine. I connected that antenna to my handheld transceiver (Yaesu FT-60R) and opened the Robot36 app on my phone. I then made sure the phone was close to the radio and turned the volume up. Since I was using a highly directional antenna, I used the ISS Detector app to help me point it correctly at the sky. The Robot36 app began decoding once it heard the start of the image signal, ultimately producing this</p>
+
+<p><img src="/20191231-iss-sstv-cropped.jpg" alt="ISS SSTV image" /></p>
+
+<p>which I saved off from my phone and cropped it a bit. Not bad for an image from space!</p>
+<footer>
+	<div>
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+		</a>
+		<br />
+		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+	</div>
+</footer>
+
+</body>
+</html>

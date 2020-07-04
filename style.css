@@ -1,0 +1,37 @@
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+header nav {
+	display: flex;
+}
+
+header nav a.page {
+	color: #ff1f01;
+}
+
+header nav a {
+	margin-right: 10px;
+}
+
+header .links {
+	display: flex;
+	align-items: flex-end;
+}
+
+header .links a {
+	margin-left: 5px;
+}
+
+footer {
+	margin-top: 50px;
+	font-size: smaller;
+}
+
+footer div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}

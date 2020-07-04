@@ -1,320 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Justin Overfelt</title>
-    <link>https://jbo.io/</link>
-    <description>Recent content on Justin Overfelt</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2020 19:51:43 -0500</lastBuildDate>
-    
-        <atom:link href="https://jbo.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <link>https://jbo.io</link>
+    <description>Justin Overfelt&#39;s Blog</description>
+    <pubDate>Sat, 04 Jul 2020 13:00:45 -0400</pubDate>
     <item>
-      <title>Images From The ISS</title>
-      <link>https://jbo.io/posts/iss-sstv/</link>
+      <title>Images from the ISS</title>
+      <link>https://jbo.io/iss-sstv.html</link>
+      <description>&lt;h2&gt;Images from the ISS&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;Last year I became a licensed amateur radio operator, first getting my Technician license and ultimately getting my General class license a month or so later. While I was a Technician class operator with limited privileges on the HF bands, I sought out things to do with my full rights on VHF and UHF frequencies.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Turns out, there are quite a few satellites in Low Earth Orbit that are usable by ham radio operators to communicate with one another over long distances. They&amp;rsquo;re basically signal repeaters in the sky. Anyway, this post is not about those satellites, it&amp;rsquo;s about the International Space Station (ISS). The ISS has similar capabilities to the amateur satellites I mentioned - you can even talk to the crew sometimes! One other thing the ISS can do is send images receivable by anyone with a handheld radio or RTL-SDR.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Slow-Scan Television&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;The ISS crew sends these images on a VHF frequency (145.800 MHz) using a mode called Slow-Scan Television (SSTV). It&amp;rsquo;s essentially images over radio and &lt;a href=&#34;https://www.sigidwiki.com/wiki/SSTV&#34;&gt;it sounds like this&lt;/a&gt;. Typically the images are sent by the ISS crew to commemorate specific events and the broadcast times are &lt;a href=&#34;https://ariss-sstv.blogspot.com/&#34;&gt;announced in advance&lt;/a&gt;.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Receiving the Signal&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;As I mentioned, there are many ways of receiving and decoding the SSTV signal from the ISS, but you&amp;rsquo;ll need 4 basic things:&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;p&gt;A receiver that can pull in FM signals on 145.800 MHz. This could be a handheld radio that has coverage on that frequency or something general like an RTL-SDR&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;An antenna: I&amp;rsquo;ve found that the signals sent by the ISS are pretty strong and can be received with even a marginal antenna like the dipole that comes with the RTL-SDR&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;Pass-prediction software: The ISS is not geosynchronous like the satellites that stream television or radio. It moves through the sky. Plug &amp;ldquo;ISS pass prediction&amp;rdquo; into your favorite search engine or just use the ISS Detector app like I do.&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;Decoding software: Something to turn the sounds into an image. Again, searching &amp;ldquo;SSTV decoding software&amp;rdquo; will turn up answers, but I use the Robot36 app on Android. The ISS typically uses the &amp;ldquo;PD120&amp;rdquo; format.&lt;/p&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;h3&gt;My Method&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;I have an antenna specifically designed for working Low-Earth Orbit satellites called an Arrow Antenna, but I&amp;rsquo;ve been told that more basic antenna work fine. I connected that antenna to my handheld transceiver (Yaesu FT-60R) and opened the Robot36 app on my phone. I then made sure the phone was close to the radio and turned the volume up. Since I was using a highly directional antenna, I used the ISS Detector app to help me point it correctly at the sky. The Robot36 app began decoding once it heard the start of the image signal, ultimately producing this&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img src=&#34;/20191231-iss-sstv-cropped.jpg&#34; alt=&#34;ISS SSTV image&#34; /&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;which I saved off from my phone and cropped it a bit. Not bad for an image from space!&lt;/p&gt;&#xA;</description>
+      <guid>https://jbo.io/iss-sstv.html</guid>
       <pubDate>Wed, 15 Jan 2020 19:51:43 -0500</pubDate>
-      
-      <guid>https://jbo.io/posts/iss-sstv/</guid>
-      <description>
-
-&lt;p&gt;Last year I became a licensed amateur radio operator, first getting my Technician license and ultimately getting my General class license a month or so later. While I was a Technician class operator with limited privileges on the HF bands, I sought out things to do with my full rights on the VHF and UHF bands.&lt;/p&gt;
-
-&lt;p&gt;Turns out, there are quite a few satellites in Low Earth Orbit that are usable by ham radio operators to communicate with one another over long distances. They&amp;rsquo;re basically signal repeaters in the sky. Anyway, this post is not about those satellites, it&amp;rsquo;s about the International Space Station (ISS). The ISS has similar capabilities to the amateur satellites I mentioned - you can even talk to the crew sometimes! One other thing the ISS can do is send images receivable by anyone with a handheld radio or RTL-SDR.&lt;/p&gt;
-
-&lt;h3 id=&#34;slow-scan-television&#34;&gt;Slow-Scan Television&lt;/h3&gt;
-
-&lt;p&gt;The ISS crew sends these images on a VHF frequency (145.800 MHz) using a mode called Slow-Scan Television (SSTV). It&amp;rsquo;s essentially images over radio and &lt;a href=&#34;https://www.sigidwiki.com/wiki/SSTV&#34;&gt;it sounds like this&lt;/a&gt;. Typically the images are sent by the ISS crew to commemorate specific events and the broadcast times are &lt;a href=&#34;https://ariss-sstv.blogspot.com/&#34;&gt;announced in advance&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Amateur radio operators also use SSTV on the HF bands to send each other serious content (memes). IMO there&amp;rsquo;s no better way to send memes than over radio!&lt;/p&gt;
-
-&lt;h3 id=&#34;receiving-the-signal&#34;&gt;Receiving the Signal&lt;/h3&gt;
-
-&lt;p&gt;As I mentioned, there are many ways of receiving and decoding the SSTV signal from the ISS, but you&amp;rsquo;ll need 5 basic things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;A receiver that can pull in FM signals on 145.800 MHz. This could be a handheld radio that has coverage on that frequency or something general like an RTL-SDR&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;An antenna: I&amp;rsquo;ve found that the signals sent by the ISS are pretty strong and can be received with even a marginal antenna like the dipole that comes with the RTL-SDR&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Pass-prediction software: The ISS is not geosynchronous like the satellites that stream television or radio - it moves through the sky. Plug &amp;ldquo;ISS pass prediction&amp;rdquo; into your favorite search engine or just use the ISS Detector app like I do.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;A clear view of the sky: self explanatory&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Decoding software: Something to turn the sounds into an image. Again, searching &amp;ldquo;SSTV decoding software&amp;rdquo; will turn up answers, but I use the Robot36 app on Android. The ISS typically uses the &amp;ldquo;PD120&amp;rdquo; format.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;my-method&#34;&gt;My Method&lt;/h3&gt;
-
-&lt;p&gt;I have an antenna specifically designed for working Low-Earth Orbit satellites called an Arrow Antenna, but I&amp;rsquo;ve been told that a more basic antenna works fine. I connected that antenna to my handheld transceiver (Yaesu FT-60R) and opened the Robot36 app on my phone. I then made sure the phone was close to the radio and turned the volume up on the FT-60R. Since I was using a highly directional antenna, I used the ISS Detector app to help me point it correctly at the sky. The Robot36 app began decoding once it heard the start of the image signal, ultimately producing this&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://jbo.io/20191231-iss-sstv-cropped.jpg&#34; alt=&#34;ISS SSTV image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;which I saved off from my phone and cropped a bit. Not bad for an image from space! You&amp;rsquo;ll note the Russian on the image - this SSTV event was run by the Russian side of the ISS.&lt;/p&gt;
-
-&lt;h3 id=&#34;thanks&#34;&gt;Thanks!&lt;/h3&gt;
-
-&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;
-</description>
     </item>
-    
     <item>
       <title>Reviving a Raspberry Pi with NetBSD</title>
-      <link>https://jbo.io/posts/rpi-netbsd/</link>
+      <link>https://jbo.io/rpi-netbsd.html</link>
+      <description>&lt;h2&gt;Reviving a Raspberry Pi with NetBSD&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;I started getting into BSDs (specifically NetBSD) as a result of my membership in &lt;a href=&#34;https://sdf.org&#34;&gt;SDF&lt;/a&gt;. I have a good deal of Linux experience but hadn&amp;rsquo;t really had a good reason to try out one of the BSD operating systems. I remembered I had a first-gen Raspberry Pi (Model B) languishing in my desk drawer and decided to put NetBSD&amp;rsquo;s slogan (&amp;ldquo;Of course it runs NetBSD!&amp;rdquo;) to the test.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The Model B features a 32-bit armv6 chip and 256MB of RAM (!). I poked around on the NetBSD homepage and found &lt;a href=&#34;http://wiki.netbsd.org/ports/evbarm/raspberry_pi/#index2h1&#34;&gt;this&lt;/a&gt; page which told me &amp;ldquo;earmv6hf&amp;rdquo; was the NetBSD port I wanted for an rpi 1.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://opensource.com/article/19/3/netbsd-raspberry-pi&#34;&gt;This article&lt;/a&gt; on opensource.com does a fantastic job of showing the initial steps to get it running, and I won&amp;rsquo;t attempt to reproduce those here. Instead, I want to fill in some gaps.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;WiFi&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;So you&amp;rsquo;ve followed the opensource.com article above and you&amp;rsquo;re sitting at a root prompt with your Pi hooked up to a TV and a keyboard plugged into one of the two USB ports. Now, you want to be able to use the Pi as a &amp;ldquo;server&amp;rdquo; and stash it somewhere. Unfortunately, Pis this old don&amp;rsquo;t have onboard WiFi, so you&amp;rsquo;ll need an adapter. This is one area where NetBSD is a bit rough around the edges: the WiFi adapter support isn&amp;rsquo;t as strong as some Linux distributions. Even if your Pi has onboard WiFi, it is unlikely that NetBSD supports it.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I used &lt;a href=&#34;https://www.amazon.com/gp/product/B003MTTJOY/&#34;&gt;this&lt;/a&gt; adapter and I know that it works out of the box with NetBSD 8.0. If that Amazon link ever dies, the adapter is the Edimax EW-7811Un. Be aware that this adapter does not have dual-band support, so you&amp;rsquo;ll have to stick with 802.11n. This means you can&amp;rsquo;t use the 5GHz band of your router.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Once you have the adapter, shut down the pi at the root prompt with &lt;code&gt;shutdown -p now&lt;/code&gt;. You&amp;rsquo;ll eventually see a message saying &amp;ldquo;press any key to restart&amp;rdquo;. Once you see this, unplug the Pi. Now, plug in the Edimax adapter to the empty USB port and reconnect the Pi. When you&amp;rsquo;re back at your root prompt, follow the instructions &lt;a href=&#34;https://wiki.netbsd.org/tutorials/how_to_use_wpa_supplicant/&#34;&gt;here&lt;/a&gt; to set up wpa_supplicant, which is the NetBSD daemon that handles WPA/WPA2. I was able to copy/paste the &amp;ldquo;simple&amp;rdquo; example from the wpa_supplicant page:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;ctrl_interface=/var/run/wpa_supplicant&#xA;ctrl_interface_group=wheel&#xA;network={&#xA;        ssid=&amp;quot;my favourite network&amp;quot;&#xA;        psk=&amp;quot;hunter2&amp;quot;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;I replaced the ssid and psk with my network&amp;rsquo;s info. The tutorial tells you to edit /etc/rc.conf and add the following lines:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;wpa_supplicant=YES&#xA;wpa_supplicant_flags=&amp;quot;-i iwn0 -c /etc/wpa_supplicant.conf&amp;quot;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;&lt;code&gt;iwn0&lt;/code&gt; is a network interface - find yours by typing &lt;code&gt;ifconfig&lt;/code&gt; and looking for interface name whose address starts with &lt;code&gt;74:da:38&lt;/code&gt; (provided you&amp;rsquo;re using my recommended adapter). Mine is &lt;code&gt;urtwn0&lt;/code&gt;, so I replaced &lt;code&gt;iwn0&lt;/code&gt; in the above command with &lt;code&gt;urtwn0&lt;/code&gt;. Now you should be able to find the Pi on your network and SSH into it - no need for the TV anymore!&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;bash issues&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;After enabling bash as my shell per the opensource.com guide, I found that some things were not on my $PATH by default. I loaded a custom .bashrc file to get my normal aliases, and found that &amp;ldquo;pkg_add&amp;rdquo; was no longer on the PATH. Also, it seems that no .bash_profile is created by default in your user&amp;rsquo;s home directory. To fix both these issues, add the below lines to the newly-created ~/.bash_profile:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R7/bin:/usr/pkg/bin&#xA;PATH=${PATH}:/usr/pkg/sbin:/usr/games:/usr/local/bin:/usr/local/sbin&#xA;&#xA;source .bashrc&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;h3&gt;pkgin&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;The opensource.com guide talks about pkgsrc, which allows for the installation of both binary and source packages for NetBSD. If you&amp;rsquo;re coming from Linux though, you&amp;rsquo;re probably expecting something that works like yum or apt. pkgsrc does not work this way and crucially, it doesn&amp;rsquo;t have a great story for updates. &lt;a href=&#34;http://pkgin.net/&#34;&gt;Pkgin&lt;/a&gt; is what you&amp;rsquo;re looking for here. Run &lt;code&gt;pkg_add -v pkgin&lt;/code&gt; as root and then follow the guides on the pkgin homepage from there. Pkgin uses pkgsrc under the hood. Remember that your old Pi 1 is very underpowered, so expect package installations to take a while.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;After you&amp;rsquo;ve installed pkgin, there will be a message telling you to run &lt;code&gt;pkgin update&lt;/code&gt;. Before you do this, check the file in /usr/pkg/etc/pkgin/repositories.conf. The url in there was wrong by default on my installation. For an rpi 1, it should be &lt;code&gt;ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/earmv6hf/8.0/All&lt;/code&gt;. Once that&amp;rsquo;s correct, run &lt;code&gt;pkgin update&lt;/code&gt;.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Assorted gotchas&lt;/h3&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;p&gt;&lt;em&gt;Never&lt;/em&gt; unplug the Pi without running &lt;code&gt;shutdown -p now&lt;/code&gt; first and waiting a bit if you&amp;rsquo;re doing that over SSH. The older models seem especially sensitive to corruption of the SD card. If this happens to you, you&amp;rsquo;ll have to hook your Pi up to a TV again and single-user mode will be active. From there you can use &lt;code&gt;fsck -tufs -y /dev/&amp;lt;your sd card&amp;gt;&lt;/code&gt; You can typically find your sdcard name by running &lt;code&gt;fdisk&lt;/code&gt;. In many scenarios this will repair your disk. If it fails for some reason, well, GOTO the top of this guide and reimage.&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;Many of the tools you&amp;rsquo;re used to having out of the box in Linux distributions will not be installed. NetBSD is highly configurable and does not attempt to decide what you should use. Most things will be easily available on pkgin though.&lt;/p&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;h3&gt;Go forth!&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;Now you can install the packages you&amp;rsquo;re used to, like vim, git, etc. Happy hacking!&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Thanks!&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;&#xA;</description>
+      <guid>https://jbo.io/rpi-netbsd.html</guid>
       <pubDate>Tue, 23 Apr 2019 10:35:48 -0400</pubDate>
-      
-      <guid>https://jbo.io/posts/rpi-netbsd/</guid>
-      <description>
-
-&lt;p&gt;I started getting into BSDs (specifically NetBSD) as a result of my membership in &lt;a href=&#34;https://sdf.org&#34;&gt;SDF&lt;/a&gt;. I have a good deal of Linux experience but hadn&amp;rsquo;t really had a good reason to try out one of the BSD operating systems. I remembered I had a first-gen Raspberry Pi (Model B) languishing in my desk drawer and decided to put NetBSD&amp;rsquo;s slogan (&amp;ldquo;Of course it runs NetBSD!&amp;rdquo;) to the test.&lt;/p&gt;
-
-&lt;p&gt;The Model B features a 32-bit armv6 chip and 256MB of RAM (!). I poked around on the NetBSD homepage and found &lt;a href=&#34;http://wiki.netbsd.org/ports/evbarm/raspberry_pi/#index2h1&#34;&gt;this&lt;/a&gt; page which told me &amp;ldquo;earmv6hf&amp;rdquo; was the NetBSD port I wanted for an rpi 1.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://opensource.com/article/19/3/netbsd-raspberry-pi&#34;&gt;This article&lt;/a&gt; on opensource.com does a fantastic job of showing the initial steps to get it running, and I won&amp;rsquo;t attempt to reproduce those here. Instead, I want to fill in some gaps.&lt;/p&gt;
-
-&lt;h3 id=&#34;wifi&#34;&gt;WiFi&lt;/h3&gt;
-
-&lt;p&gt;So you&amp;rsquo;ve followed the opensource.com article above and you&amp;rsquo;re sitting at a root prompt with your Pi hooked up to a TV and a keyboard plugged into one of the two USB ports. Now, you want to be able to use the Pi as a &amp;ldquo;server&amp;rdquo; and stash it somewhere. Unfortunately, Pis this old don&amp;rsquo;t have onboard WiFi, so you&amp;rsquo;ll need an adapter. This is one area where NetBSD is a bit rough around the edges: the WiFi adapter support isn&amp;rsquo;t as strong as some Linux distributions. Even if your Pi has onboard WiFi, it is unlikely that NetBSD supports it.&lt;/p&gt;
-
-&lt;p&gt;I used &lt;a href=&#34;https://www.amazon.com/gp/product/B003MTTJOY/&#34;&gt;this&lt;/a&gt; adapter and I know that it works out of the box with NetBSD 8.0. If that Amazon link ever dies, the adapter is the Edimax EW-7811Un. Be aware that this adapter does not have dual-band support, so you&amp;rsquo;ll have to stick with 802.11n. This means you can&amp;rsquo;t use the 5GHz band of your router.&lt;/p&gt;
-
-&lt;p&gt;Once you have the adapter, shut down the pi at the root prompt with &lt;code&gt;shutdown -p now&lt;/code&gt;. You&amp;rsquo;ll eventually see a message saying &amp;ldquo;press any key to restart&amp;rdquo;. Once you see this, unplug the Pi. Now, plug in the Edimax adapter to the empty USB port and reconnect the Pi. When you&amp;rsquo;re back at your root prompt, follow the instructions &lt;a href=&#34;https://wiki.netbsd.org/tutorials/how_to_use_wpa_supplicant/&#34;&gt;here&lt;/a&gt; to set up wpa_supplicant, which is the NetBSD daemon that handles WPA/WPA2. I was able to copy/paste the &amp;ldquo;simple&amp;rdquo; example from the wpa_supplicant page:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ctrl_interface=/var/run/wpa_supplicant
-ctrl_interface_group=wheel
-network={
-        ssid=&amp;quot;my favourite network&amp;quot;
-        psk=&amp;quot;hunter2&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I replaced the ssid and psk with my network&amp;rsquo;s info. The tutorial tells you to edit /etc/rc.conf and add the following lines:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;wpa_supplicant=YES
-wpa_supplicant_flags=&amp;quot;-i iwn0 -c /etc/wpa_supplicant.conf&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;iwn0&lt;/code&gt; is a network interface - find yours by typing &lt;code&gt;ifconfig&lt;/code&gt; and looking for interface name whose address starts with &lt;code&gt;74:da:38&lt;/code&gt; (provided you&amp;rsquo;re using my recommended adapter). Mine is &lt;code&gt;urtwn0&lt;/code&gt;, so I replaced &lt;code&gt;iwn0&lt;/code&gt; in the above command with &lt;code&gt;urtwn0&lt;/code&gt;. Now you should be able to find the Pi on your network and SSH into it - no need for the TV anymore!&lt;/p&gt;
-
-&lt;h3 id=&#34;bash-issues&#34;&gt;bash issues&lt;/h3&gt;
-
-&lt;p&gt;After enabling bash as my shell per the opensource.com guide, I found that some things were not on my $PATH by default. I loaded a custom .bashrc file to get my normal aliases, and found that &amp;ldquo;pkg_add&amp;rdquo; was no longer on the PATH. Also, it seems that no .bash_profile is created by default in your user&amp;rsquo;s home directory. To fix both these issues, add the below lines to the newly-created ~/.bash_profile:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R7/bin:/usr/pkg/bin
-PATH=${PATH}:/usr/pkg/sbin:/usr/games:/usr/local/bin:/usr/local/sbin
-
-source .bashrc
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;pkgin&#34;&gt;pkgin&lt;/h3&gt;
-
-&lt;p&gt;The opensource.com guide talks about pkgsrc, which allows for the installation of both binary and source packages for NetBSD. If you&amp;rsquo;re coming from Linux though, you&amp;rsquo;re probably expecting something that works like yum or apt. pkgsrc does not work this way and crucially, it doesn&amp;rsquo;t have a great story for updates. &lt;a href=&#34;http://pkgin.net/&#34;&gt;Pkgin&lt;/a&gt; is what you&amp;rsquo;re looking for here. Run &lt;code&gt;pkg_add -v pkgin&lt;/code&gt; as root and then follow the guides on the pkgin homepage from there. Pkgin uses pkgsrc under the hood. Remember that your old Pi 1 is very underpowered, so expect package installations to take a while.&lt;/p&gt;
-
-&lt;p&gt;After you&amp;rsquo;ve installed pkgin, there will be a message telling you to run &lt;code&gt;pkgin update&lt;/code&gt;. Before you do this, check the file in /usr/pkg/etc/pkgin/repositories.conf. The url in there was wrong by default on my installation. For an rpi 1, it should be &lt;code&gt;ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/earmv6hf/8.0/All&lt;/code&gt;. Once that&amp;rsquo;s correct, run &lt;code&gt;pkgin update&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;assorted-gotchas&#34;&gt;Assorted gotchas&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;em&gt;Never&lt;/em&gt; unplug the Pi without running &lt;code&gt;shutdown -p now&lt;/code&gt; first and waiting a bit if you&amp;rsquo;re doing that over SSH. The older models seem especially sensitive to corruption of the SD card. If this happens to you, you&amp;rsquo;ll have to hook your Pi up to a TV again and single-user mode will be active. From there you can use &lt;code&gt;fsck -tufs -y /dev/&amp;lt;your sd card&amp;gt;&lt;/code&gt; You can typically find your sdcard name by running &lt;code&gt;fdisk&lt;/code&gt;. In many scenarios this will repair your disk. If it fails for some reason, well, GOTO the top of this guide and reimage.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Many of the tools you&amp;rsquo;re used to having out of the box in Linux distributions will not be installed. NetBSD is highly configurable and does not attempt to decide what you should use. Most things will be easily available on pkgin though.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;go-forth&#34;&gt;Go forth!&lt;/h3&gt;
-
-&lt;p&gt;Now you can install the packages you&amp;rsquo;re used to, like vim, git, etc. Happy hacking!&lt;/p&gt;
-
-&lt;h3 id=&#34;thanks&#34;&gt;Thanks!&lt;/h3&gt;
-
-&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;
-</description>
     </item>
-    
     <item>
       <title>The Best RSS Reader Is Your Inbox</title>
-      <link>https://jbo.io/posts/rss2email/</link>
+      <link>https://jbo.io/rss2email.html</link>
+      <description>&lt;h2&gt;The Best RSS Reader Is Your Inbox&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;I was very late to the RSS game, especially for a programmer. It wasn&amp;rsquo;t until a little over a year ago that I got serious about making RSS/Atom a part of my daily content diet. Since that time, I&amp;rsquo;ve used a few readers, namely &lt;a href=&#34;https://www.inoreader.com&#34;&gt;Inoreader&lt;/a&gt; and an instance of &lt;a href=&#34;https://tt-rss.org/&#34;&gt;Tiny Tiny RSS&lt;/a&gt; lovingly hosted by &lt;a href=&#34;https://sdf.org&#34;&gt;SDF&lt;/a&gt; for the benefit of MetaARPA members like myself. I enjoyed both those products, but it always felt a bit like my feeds were &amp;ldquo;locked away&amp;rdquo; (even though OPML export is easy in both tools).&lt;/p&gt;&#xA;&#xA;&lt;p&gt;It finally dawned on me over the last week or so that all RSS readers (that I&amp;rsquo;ve used anyway) really just reinvent email. There&amp;rsquo;s folders the navigate things and &amp;ldquo;stars&amp;rdquo; to save articles you want to refer to later. There&amp;rsquo;s the concept of read and unread articles. You can load images or just view text. Sometimes the full content is available, other times there&amp;rsquo;s just a link. Most importantly, I find that RSS readers implement &amp;ldquo;rules&amp;rdquo; that do not compare to what is available from various email clients. I thought to myself: &amp;ldquo;I bet I could write a tool that scraped RSS feeds and sent emails very easily!&amp;rdquo;. Turns out, I&amp;rsquo;m far from the first to have this idea (much like many of my ideas).&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;rss2email&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;Enter &lt;a href=&#34;https://github.com/rss2email/rss2email&#34;&gt;rss2email&lt;/a&gt;. It appears this tool has been around for quite a while and I&amp;rsquo;m very late to the game (again). I imported my aforementioned OPML file with &lt;code&gt;r2e opmlimport&lt;/code&gt; and I was off to the races. Well&amp;hellip;sort of. You have to configure a way to send email of course! Since I was running this on the SDF Cluster, I was able to use their SMTP server by adjusting the config file (&lt;code&gt;~/.config/rss2email.cfg&lt;/code&gt;). By default, it wants to use sendmail and to be honest I was more comfortable with straight SMTP. The key setting here is &lt;code&gt;email-protocol&lt;/code&gt;. There are other SMTP settings in there that were pretty clear in my opinion.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Time to read some feeds! Be sure to invoke &lt;code&gt;r2e run&lt;/code&gt; the first time with the &lt;code&gt;--no-send&lt;/code&gt; flag or be prepared for a deluge of email as it sends you everything from all your feeds! After that, &lt;code&gt;r2e run&lt;/code&gt; will suffice. Helpfully, r2e has &lt;code&gt;-V&lt;/code&gt; flags that control the verbosity of its output. Once you have a manual run that worked, I&amp;rsquo;d recommend setting up a cron job to run it on a schedule.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Once I got all that working, I perused the other options in the config file, including some for HTML mail. I don&amp;rsquo;t typically like HTML mail, but the formatting used by default when you enable HTML is very light. There is a &amp;ldquo;digest&amp;rdquo; mode that sends one email for each feed for a given run, but it attaches the articles as emails to the digest email, which was off-putting to me. Maybe you like that. In any case, hopefully this helps someone else even later to the game than me!&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Other Options&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;A quick web search indicates that there are services out there which will do this for you, though many seem to be targeted at businesses wanting to email their customers when they have a new post. One of those products might work better if you aren&amp;rsquo;t able to set up rss2email for whatever reason!&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Thanks!&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;&#xA;</description>
+      <guid>https://jbo.io/rss2email.html</guid>
       <pubDate>Wed, 03 Apr 2019 20:28:42 -0400</pubDate>
-      
-      <guid>https://jbo.io/posts/rss2email/</guid>
-      <description>
-
-&lt;p&gt;I was very late to the RSS game, especially for a programmer. It wasn&amp;rsquo;t until a little over a year ago that I got serious about making RSS/Atom a part of my daily content diet. Since that time, I&amp;rsquo;ve used a few readers, namely &lt;a href=&#34;https://www.inoreader.com&#34;&gt;Inoreader&lt;/a&gt; and an instance of &lt;a href=&#34;https://tt-rss.org/&#34;&gt;Tiny Tiny RSS&lt;/a&gt; lovingly hosted by &lt;a href=&#34;https://sdf.org&#34;&gt;SDF&lt;/a&gt; for the benefit of MetaARPA members like myself. I enjoyed both those products, but it always felt a bit like my feeds were &amp;ldquo;locked away&amp;rdquo; (even though OPML export is easy in both tools).&lt;/p&gt;
-
-&lt;p&gt;It finally dawned on me over the last week or so that all RSS readers (that I&amp;rsquo;ve used anyway) really just reinvent email. There&amp;rsquo;s folders the navigate things and &amp;ldquo;stars&amp;rdquo; to save articles you want to refer to later. There&amp;rsquo;s the concept of read and unread articles. You can load images or just view text. Sometimes the full content is available, other times there&amp;rsquo;s just a link. Most importantly, I find that RSS readers implement &amp;ldquo;rules&amp;rdquo; that do not compare to what is available from various email clients. I thought to myself: &amp;ldquo;I bet I could write a tool that scraped RSS feeds and sent emails very easily!&amp;rdquo;. Turns out, I&amp;rsquo;m far from the first to have this idea (much like many of my ideas).&lt;/p&gt;
-
-&lt;h3 id=&#34;rss2email&#34;&gt;rss2email&lt;/h3&gt;
-
-&lt;p&gt;Enter &lt;a href=&#34;https://github.com/rss2email/rss2email&#34;&gt;rss2email&lt;/a&gt;. It appears this tool has been around for quite a while and I&amp;rsquo;m very late to the game (again). I imported my aforementioned OPML file with &lt;code&gt;r2e opmlimport&lt;/code&gt; and I was off to the races. Well&amp;hellip;sort of. You have to configure a way to send email of course! Since I was running this on the SDF Cluster, I was able to use their SMTP server by adjusting the config file (&lt;code&gt;~/.config/rss2email.cfg&lt;/code&gt;). By default, it wants to use sendmail and to be honest I was more comfortable with straight SMTP. The key setting here is &lt;code&gt;email-protocol&lt;/code&gt;. There are other SMTP settings in there that were pretty clear in my opinion.&lt;/p&gt;
-
-&lt;p&gt;Time to read some feeds! Be sure to invoke &lt;code&gt;r2e run&lt;/code&gt; the first time with the &lt;code&gt;--no-send&lt;/code&gt; flag or be prepared for a deluge of email as it sends you everything from all your feeds! After that, &lt;code&gt;r2e run&lt;/code&gt; will suffice. Helpfully, r2e has &lt;code&gt;-V&lt;/code&gt; flags that control the verbosity of its output. Once you have a manual run that worked, I&amp;rsquo;d recommend setting up a cron job to run it on a schedule.&lt;/p&gt;
-
-&lt;p&gt;Once I got all that working, I perused the other options in the config file, including some for HTML mail. I don&amp;rsquo;t typically like HTML mail, but the formatting used by default when you enable HTML is very light. There is a &amp;ldquo;digest&amp;rdquo; mode that sends one email for each feed for a given run, but it attaches the articles as emails to the digest email, which was off-putting to me. Maybe you like that. In any case, hopefully this helps someone else even later to the game than me!&lt;/p&gt;
-
-&lt;h3 id=&#34;other-options&#34;&gt;Other Options&lt;/h3&gt;
-
-&lt;p&gt;A quick web search indicates that there are services out there which will do this for you, though many seem to be targeted at businesses wanting to email their customers when they have a new post. One of those products might work better if you aren&amp;rsquo;t able to set up rss2email for whatever reason!&lt;/p&gt;
-
-&lt;h3 id=&#34;thanks&#34;&gt;Thanks!&lt;/h3&gt;
-
-&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt; with any questions or comments!&lt;/p&gt;
-</description>
     </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://jbo.io/about/</link>
-      <pubDate>Sun, 17 Mar 2019 18:12:10 -0400</pubDate>
-      
-      <guid>https://jbo.io/about/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;m a software developer who enjoys working at all points in the stack, from
-configuring servers and databases to writing frontend code. I currently work primarily
-in Go for backend code and Vue.js for frontend development, though I have extensive Java
-experience along with some Ruby and Clojure.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve had several ideas for blog posts over the last few years and decided I should write some of those
-up! Feel free to drop me a line on Mastodon (link below).&lt;/p&gt;
-
-&lt;p&gt;I also maintain a phlog (A blog using the Gopher protocol) here:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gopher://colorfield.space/1/~jboverf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The phlog mostly contains shorter form writings on tech and other topics. There are several
-browsers that support gopher out there, I recommend Lynx.&lt;/p&gt;
-
-&lt;p&gt;Selected projects can be found at the link to my GitHub below.&lt;/p&gt;
-
-&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a rel=&#34;me&#34; href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jboverfelt&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
     <item>
       <title>Server-Sent Events</title>
-      <link>https://jbo.io/posts/server-sent-events/</link>
+      <link>https://jbo.io/server-sent-events.html</link>
+      <description>&lt;h2&gt;Server-Sent Events&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;Often when the topic of web application notifications comes up, us web developers are quick to reach for WebSockets. There exists a wealth of information on them in the blogosphere and most importantly: on StackOverflow. However, WebSockets are too big a hammer for many of the cases in which they are most commonly used. Instead, I&amp;rsquo;d like you introduce you to &lt;a href=&#34;https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events&#34;&gt;Server Sent Events&lt;/a&gt;.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Why use SSE?&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;Unlike WebSockets, Server-Sent Events are for one-way communication (server pushes to client). When you&amp;rsquo;re implementing live notifications, this is all you typically need. If you really need full-duplex communication between client and server (maybe you&amp;rsquo;re making a chat app), well, then stick to WebSockets.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I find the main benefit of SSE to be its simplicity - it&amp;rsquo;s just HTTP(S)! When using WebSockets, the connection starts as HTTP, but an &amp;ldquo;Upgrade&amp;rdquo; request is sent and the connection is no longer plain HTTP. With SSE, you can continue to write HTTP handlers the way you always have in the language and framework of your choice. You just set some headers, and then write data to the client as you normally would (well, in a simple text format I&amp;rsquo;ll detail below&amp;hellip;). This means you don&amp;rsquo;t have to change anything about your web proxy or any other part of your stack. Feel free to continue to use the same authentication you use for all your other HTTP handlers. Sysadmins love it!&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Furthermore, the JavaScript interface for working with Server-Sent Events handles automatic reconnects! The reconnect time is even configurable. With all that said, let&amp;rsquo;s move onto the SSE protocol.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;The SSE Protocol&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;The SSE protocol is text-based, and has mercifully few concepts to learn. If all you want to do is send a line of text to the client, this is the format:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;data: something happened!\n\n&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;The second newline means &amp;ldquo;send the message&amp;rdquo;. The first newline is there in case you want to send messages that span more than one line. This is useful for sending JSON:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;data: {\n&#xA;data: &amp;quot;foo&amp;quot;: &amp;quot;bar&amp;quot;\n&#xA;data: }\n\n&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Now, it may be the case that you want to have different kinds of messages in the same &amp;ldquo;pipe&amp;rdquo;. Maybe a table is being updated by others and rows can be added or removed. You want to notify the user of both kinds of changes. Well, SSE has you covered there too with the &amp;ldquo;event&amp;rdquo; tag:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;event: add\n&#xA;data: added one\n\n&#xA;&#xA;event: delete\n&#xA;data: deleted one\n\n&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Finally, you can give events ids with the &amp;ldquo;id&amp;rdquo; tag:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;id: 1\n&#xA;data: i&#39;m one!\n\n&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;It&amp;rsquo;s past time to give the people what they want: code samples! All server-side code in this post will be in &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;, but it should translate to the language of your choice easily.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;The Backend&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;The implementation of a full SSE server is out of the scope of this blog post (which is already too long), if you&amp;rsquo;d like something more in-depth for Go, I heartily recommend &lt;a href=&#34;https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go&#34;&gt;this&lt;/a&gt; post from ThoughtBot.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Instead, we&amp;rsquo;ll cover the basics of writing an HTTP handler to do Server-Sent Events in Go. As is customary for lazy bloggers like myself, I&amp;rsquo;ve elided error handling. Furthermore, the code assumes you have a some sort of broker which hands out channels (little typesafe queues that Go provides) for clients to read from. This broker also allows ID generation and registering/deregistering clients. Don&amp;rsquo;t get bogged down here, just think &amp;ldquo;this broker returns things that we can read messages from&amp;rdquo;. More information on doing this is in the ThoughtBot blog post referenced earlier. I haven&amp;rsquo;t included that here because it will be heavily dependent on your use case.&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;package main&#xA;&#xA;func main() {&#xA;&#x9;// set up the fictional broker&#xA;&#x9;broker := &amp;amp;Broker{}&#xA;&#x9;http.HandleFunc(eventHandler(broker))&#xA;&#xA;&#x9;http.ListenAndServe(&amp;quot;:3131&amp;quot;, nil)&#xA;}&#xA;&#xA;func eventHandler(broker *Broker) http.HandlerFunc {&#xA;&#x9;return func(w http.ResponseWriter, r *http.Request) {&#xA;&#x9;&#x9;id := broker.GenerateID()&#xA;&#x9;&#x9;msgChan := broker.RegisterNewClient(id)&#xA;&#xA;&#x9;&#x9;w.Header().Set(&amp;quot;Content-Type&amp;quot;, &amp;quot;text/event-stream&amp;quot;)&#xA;&#x9;&#x9;w.Header().Set(&amp;quot;Cache-Control&amp;quot;, &amp;quot;no-cache&amp;quot;)&#xA;&#x9;&#x9;w.Header().Set(&amp;quot;Connection&amp;quot;, &amp;quot;keep-alive&amp;quot;)&#xA;&#xA;&#x9;&#x9;// in real code, check to make sure this cast works!&#xA;&#x9;&#x9;flusher, _ := w.(http.Flusher)&#xA;&#xA;&#x9;&#x9;for {&#xA;&#x9;&#x9;&#x9;select {&#xA;&#x9;&#x9;&#x9;case msg := &amp;lt;-msgChan:&#xA;&#x9;&#x9;&#x9;&#x9;fmt.Fprintf(w, &amp;quot;data: %s\n\n&amp;quot;, msg)&#xA;&#x9;&#x9;&#x9;&#x9;flusher.Flush()&#xA;&#x9;&#x9;&#x9;case &amp;lt;-r.Context().Done():&#xA;&#x9;&#x9;&#x9;&#x9;broker.DeregisterClient(id)&#xA;&#x9;&#x9;&#x9;&#x9;return&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Ok, there are some things to unpack here. I don&amp;rsquo;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;p&gt;The setting of the headers, specifically the Content-Type header. This &lt;strong&gt;must&lt;/strong&gt; be set to &lt;code&gt;text/event-stream&lt;/code&gt;. The other headers are for ensuring that the browser doesn&amp;rsquo;t cache messages and telling it that this connection will be long-lived.&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;Writing data out to the client with &lt;code&gt;Fprintf&lt;/code&gt;. We&amp;rsquo;re using the aforementioned format here with the &lt;code&gt;data:&lt;/code&gt; tag.&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;The &amp;ldquo;infinite&amp;rdquo; for loop, which writes data to the client until the user navigates away from the page.&lt;/p&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;p&gt;I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&amp;rsquo;t want updates anymore.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;The Frontend&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;The &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/EventSource&#34;&gt;EventSource&lt;/a&gt; interface is all you need!&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var client = new EventSource(&amp;quot;https://mysite.local:3131&amp;quot;)&#xA;client.onmessage = (e) =&amp;gt; { console.log(e.data) }&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;&lt;code&gt;onerror&lt;/code&gt; and &lt;code&gt;onopen&lt;/code&gt; handlers are also available for handling errors and performing tasks when the connection is opened.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;You might do any number of things in the &lt;code&gt;onmessage&lt;/code&gt; handler, perhaps rendering a new row in a table, or adding the line of data you just received to an array and having Vue/React/etc rerender your component!&lt;/p&gt;&#xA;&#xA;&lt;p&gt;If you broke up your events by type like I mentioned earlier, you can set up your handlers like this:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;client.addEventListener(&#39;add&#39;, (e) =&amp;gt; { console.log(e.data) }, false)&#xA;client.addEventListener(&#39;delete&#39;, (e) =&amp;gt; { console.log(e.data) }, false)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;h3&gt;Thanks!&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt;, especially if I did something wrong!&lt;/p&gt;&#xA;</description>
+      <guid>https://jbo.io/server-sent-events.html</guid>
       <pubDate>Sun, 17 Mar 2019 17:47:41 -0400</pubDate>
-      
-      <guid>https://jbo.io/posts/server-sent-events/</guid>
-      <description>
-
-&lt;p&gt;Often when the topic of web application notifications comes up, us web developers are quick to reach for WebSockets. There exists a wealth of information on them in the blogosphere and most importantly: on StackOverflow. However, WebSockets are too big a hammer for many of the cases in which they are most commonly used. Instead, I&amp;rsquo;d like you introduce you to &lt;a href=&#34;https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events&#34;&gt;Server Sent Events&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-use-sse&#34;&gt;Why use SSE?&lt;/h3&gt;
-
-&lt;p&gt;Unlike WebSockets, Server-Sent Events are for one-way communication (server pushes to client). When you&amp;rsquo;re implementing live notifications, this is all you typically need. If you really need full-duplex communication between client and server (maybe you&amp;rsquo;re making a chat app), well, then stick to WebSockets.&lt;/p&gt;
-
-&lt;p&gt;I find the main benefit of SSE to be its simplicity - it&amp;rsquo;s just HTTP(S)! When using WebSockets, the connection starts as HTTP, but an &amp;ldquo;Upgrade&amp;rdquo; request is sent and the connection is no longer plain HTTP. With SSE, you can continue to write HTTP handlers the way you always have in the language and framework of your choice. You just set some headers, and then write data to the client as you normally would (well, in a simple text format I&amp;rsquo;ll detail below&amp;hellip;). This means you don&amp;rsquo;t have to change anything about your web proxy or any other part of your stack. Feel free to continue to use the same authentication you use for all your other HTTP handlers. Sysadmins love it!&lt;/p&gt;
-
-&lt;p&gt;Furthermore, the JavaScript interface for working with Server-Sent Events handles automatic reconnects! The reconnect time is even configurable. With all that said, let&amp;rsquo;s move onto the SSE protocol.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-sse-protocol&#34;&gt;The SSE Protocol&lt;/h3&gt;
-
-&lt;p&gt;The SSE protocol is text-based, and has mercifully few concepts to learn. If all you want to do is send a line of text to the client, this is the format:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;data: something happened!\n\n
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The second newline means &amp;ldquo;send the message&amp;rdquo;. The first newline is there in case you want to send messages that span more than one line. This is useful for sending JSON:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;data: {\n
-data: &amp;quot;foo&amp;quot;: &amp;quot;bar&amp;quot;\n
-data: }\n\n
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, it may be the case that you want to have different kinds of messages in the same &amp;ldquo;pipe&amp;rdquo;. Maybe a table is being updated by others and rows can be added or removed. You want to notify the user of both kinds of changes. Well, SSE has you covered there too with the &amp;ldquo;event&amp;rdquo; tag:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;event: add\n
-data: added one\n\n
-
-event: delete\n
-data: deleted one\n\n
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Finally, you can give events ids with the &amp;ldquo;id&amp;rdquo; tag:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;id: 1\n
-data: i&#39;m one!\n\n
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It&amp;rsquo;s past time to give the people what they want: code samples! All server-side code in this post will be in &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;, but it should translate to the language of your choice easily.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-backend&#34;&gt;The Backend&lt;/h3&gt;
-
-&lt;p&gt;The implementation of a full SSE server is out of the scope of this blog post (which is already too long), if you&amp;rsquo;d like something more in-depth for Go, I heartily recommend &lt;a href=&#34;https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go&#34;&gt;this&lt;/a&gt; post from ThoughtBot.&lt;/p&gt;
-
-&lt;p&gt;Instead, we&amp;rsquo;ll cover the basics of writing an HTTP handler to do Server-Sent Events in Go. As is customary for lazy bloggers like myself, I&amp;rsquo;ve elided error handling. Furthermore, the code assumes you have a some sort of broker which hands out channels (little typesafe queues that Go provides) for clients to read from. This broker also allows ID generation and registering/deregistering clients. Don&amp;rsquo;t get bogged down here, just think &amp;ldquo;this broker returns things that we can read messages from&amp;rdquo;. More information on doing this is in the ThoughtBot blog post referenced earlier. I haven&amp;rsquo;t included that here because it will be heavily dependent on your use case.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;package&lt;/span&gt; main
-
-&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;main&lt;/span&gt;() {
-	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;// set up the fictional broker
-&lt;/span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;&lt;/span&gt;	broker &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;Broker{}
-	http.&lt;span style=&#34;color:#00f&#34;&gt;HandleFunc&lt;/span&gt;(&lt;span style=&#34;color:#00f&#34;&gt;eventHandler&lt;/span&gt;(broker))
-
-	http.&lt;span style=&#34;color:#00f&#34;&gt;ListenAndServe&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;:3131&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;nil&lt;/span&gt;)
-}
-
-&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;eventHandler&lt;/span&gt;(broker &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;Broker) http.HandlerFunc {
-	&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;func&lt;/span&gt;(w http.ResponseWriter, r &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;http.Request) {
-		id &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; broker.&lt;span style=&#34;color:#00f&#34;&gt;GenerateID&lt;/span&gt;()
-		msgChan &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; broker.&lt;span style=&#34;color:#00f&#34;&gt;RegisterNewClient&lt;/span&gt;(id)
-
-		w.&lt;span style=&#34;color:#00f&#34;&gt;Header&lt;/span&gt;().&lt;span style=&#34;color:#00f&#34;&gt;Set&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;Content-Type&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;text/event-stream&amp;#34;&lt;/span&gt;)
-		w.&lt;span style=&#34;color:#00f&#34;&gt;Header&lt;/span&gt;().&lt;span style=&#34;color:#00f&#34;&gt;Set&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;Cache-Control&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;no-cache&amp;#34;&lt;/span&gt;)
-		w.&lt;span style=&#34;color:#00f&#34;&gt;Header&lt;/span&gt;().&lt;span style=&#34;color:#00f&#34;&gt;Set&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;Connection&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;keep-alive&amp;#34;&lt;/span&gt;)
-
-		&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;// in real code, check to make sure this cast works!
-&lt;/span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;&lt;/span&gt;		flusher, _ &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; w.(http.Flusher)
-
-		&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;for&lt;/span&gt; {
-			&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;select&lt;/span&gt; {
-			&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;case&lt;/span&gt; msg &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;lt;-&lt;/span&gt;msgChan:
-				fmt.&lt;span style=&#34;color:#00f&#34;&gt;Fprintf&lt;/span&gt;(w, &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;data: %s\n\n&amp;#34;&lt;/span&gt;, msg)
-				flusher.&lt;span style=&#34;color:#00f&#34;&gt;Flush&lt;/span&gt;()
-			&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;lt;-&lt;/span&gt;r.&lt;span style=&#34;color:#00f&#34;&gt;Context&lt;/span&gt;().&lt;span style=&#34;color:#00f&#34;&gt;Done&lt;/span&gt;():
-				broker.&lt;span style=&#34;color:#00f&#34;&gt;DeregisterClient&lt;/span&gt;(id)
-				&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;return&lt;/span&gt;
-			}
-		}
-	}
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ok, there are some things to unpack here. I don&amp;rsquo;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The setting of the headers, specifically the Content-Type header. This &lt;strong&gt;must&lt;/strong&gt; be set to &lt;code&gt;text/event-stream&lt;/code&gt;. The other headers are for ensuring that the browser doesn&amp;rsquo;t cache messages and telling it that this connection will be long-lived.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Writing data out to the client with &lt;code&gt;Fprintf&lt;/code&gt;. We&amp;rsquo;re using the aforementioned format here with the &lt;code&gt;data:&lt;/code&gt; tag.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The &amp;ldquo;infinite&amp;rdquo; for loop, which writes data to the client until the user navigates away from the page.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&amp;rsquo;t want updates anymore.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-frontend&#34;&gt;The Frontend&lt;/h3&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/EventSource&#34;&gt;EventSource&lt;/a&gt; interface is all you need!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;var&lt;/span&gt; client &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;new&lt;/span&gt; EventSource(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;https://mysite.local:3131&amp;#34;&lt;/span&gt;)
-client.onmessage &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; (e) =&amp;gt; { console.log(e.data) }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;onerror&lt;/code&gt; and &lt;code&gt;onopen&lt;/code&gt; handlers are also available for handling errors and performing tasks when the connection is opened.&lt;/p&gt;
-
-&lt;p&gt;You might do any number of things in the &lt;code&gt;onmessage&lt;/code&gt; handler, perhaps rendering a new row in a table, or adding the line of data you just received to an array and having Vue/React/etc rerender your component!&lt;/p&gt;
-
-&lt;p&gt;If you broke up your events by type like I mentioned earlier, you can set up your handlers like this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;client.addEventListener(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;add&amp;#39;&lt;/span&gt;, (e) =&amp;gt; { console.log(e.data) }, &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;false&lt;/span&gt;)
-client.addEventListener(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;delete&amp;#39;&lt;/span&gt;, (e) =&amp;gt; { console.log(e.data) }, &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;false&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;thanks&#34;&gt;Thanks!&lt;/h3&gt;
-
-&lt;p&gt;I hope you&amp;rsquo;ve enjoyed this post. Hit me up on &lt;a href=&#34;https://mastodon.sdf.org/@jboverf&#34;&gt;Mastodon&lt;/a&gt;, especially if I did something wrong!&lt;/p&gt;
-</description>
     </item>
-    
   </channel>
 </rss>
