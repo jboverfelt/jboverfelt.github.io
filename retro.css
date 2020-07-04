@@ -183,7 +183,7 @@ html {
 
 body {
   color: #fafafa;
-  font-family: "Courier New";
+  font-family: "Courier New", monospace;
   line-height: 1.45;
   margin: 6rem auto 1rem;
   max-width: 48rem;
