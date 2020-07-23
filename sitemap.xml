@@ -4,10 +4,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://jbo.io/index.html</loc><lastmod>2020-07-04</lastmod><priority>1.0</priority></url>
-<url><loc>https://jbo.io/rpi-netbsd.html</loc><lastmod>2020-07-04</lastmod><priority>1.0</priority></url>
-<url><loc>https://jbo.io/server-sent-events.html</loc><lastmod>2020-07-04</lastmod><priority>1.0</priority></url>
-<url><loc>https://jbo.io/about.html</loc><lastmod>2020-07-04</lastmod><priority>1.0</priority></url>
-<url><loc>https://jbo.io/rss2email.html</loc><lastmod>2020-07-04</lastmod><priority>1.0</priority></url>
-<url><loc>https://jbo.io/iss-sstv.html</loc><lastmod>2020-07-04</lastmod><priority>1.0</priority></url>
+<url><loc>https://jbo.io/index.html</loc><lastmod>2020-07-23</lastmod><priority>1.0</priority></url>
+<url><loc>https://jbo.io/rpi-netbsd.html</loc><lastmod>2020-07-23</lastmod><priority>1.0</priority></url>
+<url><loc>https://jbo.io/server-sent-events.html</loc><lastmod>2020-07-23</lastmod><priority>1.0</priority></url>
+<url><loc>https://jbo.io/about.html</loc><lastmod>2020-07-23</lastmod><priority>1.0</priority></url>
+<url><loc>https://jbo.io/rss2email.html</loc><lastmod>2020-07-23</lastmod><priority>1.0</priority></url>
+<url><loc>https://jbo.io/iss-sstv.html</loc><lastmod>2020-07-23</lastmod><priority>1.0</priority></url>
 </urlset>
