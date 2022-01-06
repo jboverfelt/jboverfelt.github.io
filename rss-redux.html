@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="retro.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Justin Overfelt</title>
+</head>
+
+<body>
+
+<header>
+	<!-- Homepage Title -->
+	<nav>
+		<a href="/">Justin Overfelt</a>
+		<a class="page" href="/about.html">About</a>
+	</nav>
+	<!-- Show RSS feed in the header -->
+	<div class="links">
+		<a href="/index.xml"><img class="feather" src="/feed.svg" height="23px" width="16px" /></a>
+		<a rel="me" href="https://mastodon.sdf.org/@jboverf"><img class="feather" src="/mastodon-simple.svg" height="23px" width="16px" /></a>
+		<a href="https://github.com/jboverfelt"><img class="feather" src="/github.svg" height="23px" width="16px" /></a>
+	</div>
+</header>
+<h2 id="RSS%20Redux">RSS Redux</h2>
+
+<p>It&#39;s been a while since my last post - lots going on in life. I&#39;m back and looking to rehash a previous topic: RSS via email. In a <a href="/rss2email.html">previous post</a>, I talked about rss2email on SDF. I eventually moved that setup over to another pubnix called radiofreqs.space, but that was taken offline at some point in 2021. This left me with no good way to get RSS feed updates delivered to my inbox. It was a good time to look into an alternative anyway as I was already moving my personal email over to Migadu, but that&#39;s another post!</p>
+
+<h3 id="FeedMail">FeedMail</h3>
+
+<p>My next move was to scour HackerNews threads for solutions as I can&#39;t have been the only person too lazy to set up a personal server for sending email from one of my domains. I located a comment mentioning <a href="https://feedmail.org">FeedMail</a>, which remains my primary solution to this day. Just like rss2email, it will send you a separate email for each new post from every feed you&#39;re subscribed to.</p>
+
+<p>The setup is very straightforward and the site itself has a pleasing, minimal look. It supports having separate emails for administration and feeds, even supporting different emails on a per-feed basis. The &#8220;credit&#8221; system is very easy to understand and hopefully will make FeedMail sustainable in the long term. It supports OPML import, so I was quickly off to the races. I had a minor issue with one of my feeds not following the Atom standard properly and I found FeedMail&#39;s maintainer to be incredibly responsive.</p>
+
+<p>However, once I was forced to step back and re-evaluate my RSS feed consumption, I realized that there were several feeds I followed that don&#39;t fit nicely into the one-email-per-post model. These feeds shared a couple characteristics:</p>
+
+<ol start="1">
+<li>They were high traffic, commonly 5-10 new posts during an average weekday</li>
+<li>I was interested in, at most, 1 or 2 of those new posts on a given day. The others were deleted after a glance at the title. My first thought was maybe I shouldn&#39;t be following these feeds at all but I didn&#39;t want to give up those interesting articles buried in the noise.</li>
+</ol>
+
+<p>Given the payment system that FeedMail uses, these feeds were burning a lot of credits sending me emails I would immediately delete. Back to HN to find a complementary solution!</p>
+
+<h3 id="RSS%20by%20email">RSS by email</h3>
+
+<p>Another helpful HN comment led me to <a href="https://rssby.email">RSS by email</a>. This service is even more minimalist than FeedMail: you interact with it solely through the use of email. Special messages to the service are used to manage feeds, and you get a lightly-formatted digest of all new articles daily at a UTC hour of your choosing. This is the perfect solution for the issue of feeds with low signal to noise ratio. Now, I can just scan past any articles I don&#39;t care about each day.</p>
+
+<p>As far as I can tell, RSS by email is being run as a hobby by its creator, so I worry about its long-term viability. There is no donation link that I can find.</p>
+
+<p>That being said, my heuristic going forward is that low-traffic or otherwise high priority feeds are managed by FeedMail, while firehose-type feeds are handled by RSS by email.</p>
+
+<h3 id="Thanks!">Thanks!</h3>
+
+<p>My goal for 2022 is to post more than one blog post every two years&#8230;</p>
+<footer>
+	<div>
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+		</a>
+		<br />
+		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+	</div>
+</footer>
+
+</body>
+</html>
