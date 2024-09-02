@@ -1,9 +1,9 @@
-./rss2email.md
-./retro.css
-./server-sent-events.md
-./rss-redux.md
-./style.css
 ./iss-sstv.md
-./about.md
-./rpi-netbsd.md
 ./index.html
+./about.md
+./style.css
+./rss-redux.md
+./rss2email.md
+./server-sent-events.md
+./retro.css
+./rpi-netbsd.md

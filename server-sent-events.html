@@ -19,21 +19,20 @@
 	<!-- Show RSS feed in the header -->
 	<div class="links">
 		<a href="/index.xml"><img class="feather" src="/feed.svg" height="23px" width="16px" /></a>
-		<a rel="me" href="https://mastodon.sdf.org/@jboverf"><img class="feather" src="/mastodon-simple.svg" height="23px" width="16px" /></a>
 		<a href="https://github.com/jboverfelt"><img class="feather" src="/github.svg" height="23px" width="16px" /></a>
 	</div>
 </header>
 <h2 id="Server-Sent%20Events">Server-Sent Events</h2>
 
-<p>Often when the topic of web application notifications comes up, us web developers are quick to reach for WebSockets. There exists a wealth of information on them in the blogosphere and most importantly: on StackOverflow. However, WebSockets are too big a hammer for many of the cases in which they are most commonly used. Instead, I&#39;d like you introduce you to <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events">Server Sent Events</a>.</p>
+<p>Often when the topic of web application notifications comes up, us web developers are quick to reach for WebSockets. There exists a wealth of information on them in the blogosphere and most importantly: on StackOverflow. However, WebSockets are too big a hammer for many of the cases in which they are most commonly used. Instead, I&#8217;d like you introduce you to <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events">Server Sent Events</a>.</p>
 
 <h3 id="Why%20use%20SSE?">Why use SSE?</h3>
 
-<p>Unlike WebSockets, Server-Sent Events are for one-way communication (server pushes to client). When you&#39;re implementing live notifications, this is all you typically need. If you really need full-duplex communication between client and server (maybe you&#39;re making a chat app), well, then stick to WebSockets.</p>
+<p>Unlike WebSockets, Server-Sent Events are for one-way communication (server pushes to client). When you&#8217;re implementing live notifications, this is all you typically need. If you really need full-duplex communication between client and server (maybe you&#8217;re making a chat app), well, then stick to WebSockets.</p>
 
-<p>I find the main benefit of SSE to be its simplicity - it&#39;s just HTTP(S)! When using WebSockets, the connection starts as HTTP, but an &#8220;Upgrade&#8221; request is sent and the connection is no longer plain HTTP. With SSE, you can continue to write HTTP handlers the way you always have in the language and framework of your choice. You just set some headers, and then write data to the client as you normally would (well, in a simple text format I&#39;ll detail below&#8230;). This means you don&#39;t have to change anything about your web proxy or any other part of your stack. Feel free to continue to use the same authentication you use for all your other HTTP handlers. Sysadmins love it!</p>
+<p>I find the main benefit of SSE to be its simplicity - it&#8217;s just HTTP(S)! When using WebSockets, the connection starts as HTTP, but an &#8220;Upgrade&#8221; request is sent and the connection is no longer plain HTTP. With SSE, you can continue to write HTTP handlers the way you always have in the language and framework of your choice. You just set some headers, and then write data to the client as you normally would (well, in a simple text format I&#8217;ll detail below&#8230;). This means you don&#8217;t have to change anything about your web proxy or any other part of your stack. Feel free to continue to use the same authentication you use for all your other HTTP handlers. Sysadmins love it!</p>
 
-<p>Furthermore, the JavaScript interface for working with Server-Sent Events handles automatic reconnects! The reconnect time is even configurable. With all that said, let&#39;s move onto the SSE protocol.</p>
+<p>Furthermore, the JavaScript interface for working with Server-Sent Events handles automatic reconnects! The reconnect time is even configurable. With all that said, let&#8217;s move onto the SSE protocol.</p>
 
 <h3 id="The%20SSE%20Protocol">The SSE Protocol</h3>
 
@@ -64,13 +63,13 @@ data: deleted one\n\n
 data: i&#39;m one!\n\n
 </code></pre>
 
-<p>It&#39;s past time to give the people what they want: code samples! All server-side code in this post will be in <a href="https://golang.org">Go</a>, but it should translate to the language of your choice easily.</p>
+<p>It&#8217;s past time to give the people what they want: code samples! All server-side code in this post will be in <a href="https://golang.org">Go</a>, but it should translate to the language of your choice easily.</p>
 
 <h3 id="The%20Backend">The Backend</h3>
 
-<p>The implementation of a full SSE server is out of the scope of this blog post (which is already too long), if you&#39;d like something more in-depth for Go, I heartily recommend <a href="https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go">this</a> post from ThoughtBot.</p>
+<p>The implementation of a full SSE server is out of the scope of this blog post (which is already too long), if you&#8217;d like something more in-depth for Go, I heartily recommend <a href="https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go">this</a> post from ThoughtBot.</p>
 
-<p>Instead, we&#39;ll cover the basics of writing an HTTP handler to do Server-Sent Events in Go. As is customary for lazy bloggers like myself, I&#39;ve elided error handling. Furthermore, the code assumes you have a some sort of broker which hands out channels (little typesafe queues that Go provides) for clients to read from. This broker also allows ID generation and registering&#47;deregistering clients. Don&#39;t get bogged down here, just think &#8220;this broker returns things that we can read messages from&#8221;. More information on doing this is in the ThoughtBot blog post referenced earlier. I haven&#39;t included that here because it will be heavily dependent on your use case.</p>
+<p>Instead, we&#8217;ll cover the basics of writing an HTTP handler to do Server-Sent Events in Go. As is customary for lazy bloggers like myself, I&#8217;ve elided error handling. Furthermore, the code assumes you have a some sort of broker which hands out channels (little typesafe queues that Go provides) for clients to read from. This broker also allows ID generation and registering&#47;deregistering clients. Don&#8217;t get bogged down here, just think &#8220;this broker returns things that we can read messages from&#8221;. More information on doing this is in the ThoughtBot blog post referenced earlier. I haven&#8217;t included that here because it will be heavily dependent on your use case.</p>
 
 <pre><code>package main
 
@@ -108,15 +107,15 @@ func eventHandler(broker *Broker) http.HandlerFunc {
 }
 </code></pre>
 
-<p>Ok, there are some things to unpack here. I don&#39;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:</p>
+<p>Ok, there are some things to unpack here. I don&#8217;t want to talk too much about the Go-specific parts, because this is an SSE tutorial. Here are the important bits:</p>
 
 <ul>
-<li><p>The setting of the headers, specifically the Content-Type header. This <strong>must</strong> be set to <code>text&#47;event-stream</code>. The other headers are for ensuring that the browser doesn&#39;t cache messages and telling it that this connection will be long-lived.</p></li>
-<li><p>Writing data out to the client with <code>Fprintf</code>. We&#39;re using the aforementioned format here with the <code>data:</code> tag.</p></li>
+<li><p>The setting of the headers, specifically the Content-Type header. This <strong>must</strong> be set to <code>text&#47;event-stream</code>. The other headers are for ensuring that the browser doesn&#8217;t cache messages and telling it that this connection will be long-lived.</p></li>
+<li><p>Writing data out to the client with <code>Fprintf</code>. We&#8217;re using the aforementioned format here with the <code>data:</code> tag.</p></li>
 <li><p>The &#8220;infinite&#8221; for loop, which writes data to the client until the user navigates away from the page.</p></li>
 </ul>
 
-<p>I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&#39;t want updates anymore.</p>
+<p>I claim that this is conceptually straightfoward when compared to WebSockets and allows nearly endless tailoring to fit the needs of your application. To summarize: set the right headers, and write data out in the SSE format until the user leaves or otherwise says they don&#8217;t want updates anymore.</p>
 
 <h3 id="The%20Frontend">The Frontend</h3>
 
@@ -138,7 +137,7 @@ client.addEventListener(&#39;delete&#39;, (e) =&#62; { console.log(e.data) }, fa
 
 <h3 id="Thanks!">Thanks!</h3>
 
-<p>I hope you&#39;ve enjoyed this post. Hit me up on <a href="https://mastodon.sdf.org/@jboverf">Mastodon</a>, especially if I did something wrong!</p>
+<p>I hope you&#8217;ve enjoyed this post. Hit me up on <a href="https://mastodon.sdf.org/@jboverf">Mastodon</a>, especially if I did something wrong!</p>
 <footer>
 	<div>
 		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
