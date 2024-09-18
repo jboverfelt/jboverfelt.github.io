@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="retro.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Open Source in Amateur Radio &mdash; Justin Overfelt</title>
+</head>
+
+<body>
+
+<header>
+	<!-- Homepage Title -->
+	<nav>
+		<a href="/">Justin Overfelt</a>
+		<a class="page" href="/about.html">About</a>
+	</nav>
+	<!-- Show RSS feed in the header -->
+	<div class="links">
+		<a href="/index.xml"><img class="feather" src="/feed.svg" height="23px" width="16px" /></a>
+		<a href="https://github.com/jboverfelt"><img class="feather" src="/github.svg" height="23px" width="16px" /></a>
+	</div>
+</header>
+<h1 id="Open%20Source%20in%20Amateur%20Radio">Open Source in Amateur Radio</h1>
+
+<p>When I first got my Technician license in 2019, I heard people call amateur radio &#8220;the hobby of experimentation&#8221;. I was told I had received a &#8220;license to learn&#8221;. Indeed, 47 CFR Part 97, the section of the Code of Federal Regulations that governs amateur radio in the United States says this in Subpart A under &#8220;Basis And Purpose&#8221;:</p>
+
+<blockquote>
+<p>The rules and regulations in this part are designed to provide an amateur radio service having a fundamental purpose as expressed in the following principles:</p>
+
+<p>&#8230;</p>
+
+<p>Continuation and extension of the amateur&#8217;s proven ability to contribute to the advancement of the radio art.</p>
+
+<p>Encouragement and improvement of the amateur service through rules which provide for advancing skills in both the communication and technical phases of the art.</p>
+</blockquote>
+
+<p>I have found a great many fellow hams that live these principles in one way or another. One thing I was surprised to find though is that, as a community, we don&#8217;t uphold them when it comes to software. The vast majority of the software ever written for the amateur community is proprietary and Windows-only. Worse, it is Windows <em>desktop</em> only, with little to no consideration given to mobile or remote operation.</p>
+
+<h2 id="Yeah,%20but%20most%20computers%20run%20Windows">Yeah, but most computers run Windows</h2>
+
+<p>This was once true, and probably is still true if all you&#8217;re counting are desktops and laptops. However, smartphones are by far the most popular computing devices these days, and none currently on sale run Windows. In fact, today we enjoy a huge diversity of computing devices and processor architectures. You can run Linux on a RISC-V processor, Windows on an ARM processor, NetBSD on x64, and on and on. This is a very different state of affairs than the Windows-on-Intel-processors status quo that existed when amateur radio software gained popularity. The Raspberry Pi brought low cost ARM devices that ran Linux to the masses, and the Pis and their clones are still hugely popular among hams. In fact, many of the new entrants to the hobby come from the tech world now (I&#8217;m one of them!). They might want to run higher power in the 2.4GHz band, or maybe they played with Meshtastic and are looking for more. These people expect a thriving open source culture from the hobby of experimentation.</p>
+
+<p>Perhaps you don&#8217;t come from this culture, and are wondering what all the fuss is about.</p>
+
+<h2 id="Why%20Open%20Source?">Why Open Source?</h2>
+
+<p>Many reasons are detailed elsewhere, ask your favorite LLM! I&#8217;ll focus on the reasons that are specific to amateur radio.</p>
+
+<h3 id="Be%20an%20experimenter">Be an experimenter</h3>
+
+<p>Open Source, and specifically Free Software, <a href="https://www.gnu.org/philosophy/free-sw.html">preserves your freedom</a>. In amateur radio, it also preserves your ability to experiment. You can&#8217;t experiment and learn from closed source software. It turns you into the dreaded appliance operator. You can&#8217;t mold your setup the way you want it. You can&#8217;t support any configuration the software author hasn&#8217;t previously thought of.</p>
+
+<h3 id="Your%20favorite%20software,%20SK">Your favorite software, SK</h3>
+
+<p>It may be morbid, but it has to be said: many, many programs become a &#8220;silent key&#8221; with their creators. No one had the source, so there was no way to continue fixing bugs and adding features after the death of the original author. This is also a liability for emergency communications and I&#8217;m shocked that (for example) Vara has made inroads there. As far as I can tell, it&#8217;s all dependent on one guy.</p>
+
+<p>Even if the author has the forethought to make a plan for releasing the code after they burn out or shuffle off this mortal coil, no one else is experienced in developing it and there&#8217;s no incentive to make it easy for others to build. Likewise, there&#8217;s no reason for the author to produce developer-focused documentation. Having the code itself is only a small part of the equation.</p>
+
+<p>You might think this issue is mitigated if the software is offered by a company. Not so. Companies are bought out or fail all the time. A great many companies offered packet radio software in the 90s and 2000s. Almost none of them are around today.</p>
+
+<h2 id="An%20aside%20about%20hardware">An aside about hardware</h2>
+
+<p>Although the move to software modems has been a good thing overall for amateur radio, old-style hardware modems (&#8220;TNCs&#8221;) did have one advantage: cross platform support was &#8220;free&#8221; since they tended to operate over serial connections that worked on all operating systems. That was just about their only advantage though, as they were bulky and expensive. They were also full of proprietary firmware. As an example, although SCS Pactor modems are every bit as proprietary as Vara, they are simple to use with any operating system and architecture.</p>
+
+<h2 id="Success%20Stories">Success Stories</h2>
+
+<p>There is hope however. Some of the most popular packages in amateur radio today are open source:</p>
+
+<ul>
+<li>WSJT-X</li>
+<li>Fldigi</li>
+<li>Pat</li>
+<li>ARDOP</li>
+</ul>
+
+<p>You can take a look at the source of any of these programs and learn something. If something doesn&#8217;t work the way you want it, you change change it! If you don&#8217;t know how to develop software, it&#8217;s quite likely someone else has had the same idea already. They can redistribute their own version or contribute back to the original.</p>
+
+<p>The <a href="https://www.ardc.net/">ARDC</a> is doing great work in this area, funding important pursuits like <a href="https://github.com/Rhizomatica/mercury">Mercury</a>, a high-performance software modem.</p>
+
+<h2 id="Closing%20Thoughts">Closing Thoughts</h2>
+
+<p>There&#8217;s nothing illegal about using proprietary software on the air in the USA, provided protocols are &#8220;documented&#8221;. It should be noted that what qualifies as &#8220;documented&#8221; has never been precisely defined by either the FCC or case law.</p>
+
+<p>This blog post is not an invitation to zealotry: sometimes practicality must trump idealism, and this is why I own a (secondhand) Pactor modem and am a paid Vara subscriber. I make it a point, however, to use Open Source Software whenever possible.</p>
+
+<p>This <em>is</em> an invitation to support Open Source and Free Software by using it over alternatives, contributing when you can, and choosing open source when you write new software.</p>
+<footer>
+	<div>
+		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+	</div>
+</footer>
+
+</body>
+</html>
