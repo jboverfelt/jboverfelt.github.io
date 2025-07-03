@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="retro.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Iterator Adapters in Go &mdash; Justin Overfelt</title>
+</head>
+
+<body>
+
+<header>
+	<!-- Homepage Title -->
+	<nav>
+		<a href="/">Justin Overfelt</a>
+		<a class="page" href="/about.html">About</a>
+	</nav>
+	<!-- Show RSS feed in the header -->
+	<div class="links">
+		<a href="/index.xml"><img class="feather" src="/feed.svg" height="23px" width="16px" /></a>
+	</div>
+</header>
+<h1 id="Iterator%20Adapters%20in%20Go">Iterator Adapters in Go</h1>
+
+<p>With the release of version 1.23, Go now has support for what they call &#8220;range-over-func&#8221;, more commonly known as iterators. Essentially, it allows a developer to pass a function to for-range loops. This post won&#8217;t be about the basics of iterators in Go, as the basics are covered ably by Ian Lance Taylor on the <a href="https://go.dev/blog/range-functions">official Go blog</a>.</p>
+
+<p>Most of the posts I&#8217;ve seen with real-world examples of iterators focus on their use when paired with custom, generic collection types. To be sure, iterators are huge improvement in the ergonomics of custom collection types in Go. However, I&#8217;ve used them much more often in the context of what I&#8217;ll call &#8220;iterator adapters&#8221;. Because Go did not have first-class support for this concept prior to 1.23, there are a number of bespoke iterator implementations in the standard library. Common ones include iterating over CSV rows using encoding&#47;csv, fetching entries in a tar file using archive&#47;tar, and processing chunks of a multipart message using mime&#47;multipart.</p>
+
+<p>Typically, usage of these bespoke iterators involves an unconditional loop with clauses that break out of the loop upon receiving <code>io.EOF</code>. The classical example with encoding&#47;csv is below:</p>
+
+<pre><code>&#47;&#47; ...
+cr := csv.NewReader(r)
+
+for {
+    rec, err := r.Read()
+
+    if err == io.EOF {
+        break
+    }
+
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(record)
+}
+&#47;&#47; ...
+</code></pre>
+
+<p>This is rather annoying if the logic is any more complex than the simple example above. It forces you to mix iteration control with your business logic. Let&#8217;s look at how we might clean this up with an iterator adapter.</p>
+
+<pre><code>func allRecords(cr *csv.Reader) iter.Seq2[[]string, error] {
+    return func(yield func([]string, error) bool) {
+        for {
+            rec, err := r.Read()
+            if err == io.EOF {
+                return
+            }
+
+            if !yield(rec, err) {
+                return
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Now, we can use this new function to significantly clean up our code:</p>
+
+<pre><code>&#47;&#47; ...
+cr := csv.NewReader(r)
+
+for rec, err := range allRecords(cr) {
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(rec)
+}
+&#47;&#47; ...
+</code></pre>
+
+<p>Not only is the business logic now separate from the iteration, it also reads better. Anyone looking at this code will immediately know that you&#8217;re looping over all records in a CSV file: &#8220;range over allRecords&#8221;. However, there are other benefits too. What if we decide that we don&#8217;t want the header of the CSV file? No problem, we don&#8217;t have to modify our application code at all - only the iterator adapter needs to be changed.</p>
+
+<pre><code>func allRecords(cr *csv.Reader) iter.Seq2[[]string, error] {
+    return func(yield func([]string, error) bool) {
+        &#47;&#47; read off the header
+        &#47;&#47; any errors will be caught by the subsequent call to r.Read()
+        _, _ = r.Read()
+
+        for {
+            rec, err := r.Read()
+            if err == io.EOF {
+                return
+            }
+
+            if !yield(rec, err) {
+                return
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Done! You could even have two functions, <code>allRecords</code> with the original behavior and <code>allRecordsNoHeader</code> with the updated code. You can apply this pattern anytime you see an unconditional loop with a call to <code>Next()</code> or a similar function. Perhaps the Go team will ultimately modify the standard library to include iterator adapters like this. However, you may want to handle errors differently or make subtle changes like our no-header CSV change. These adapters are so simple that it might make sense to allow each programmer to define them as they desire. Enjoy!</p>
+<footer>
+	<div>
+		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+	</div>
+</footer>
+
+</body>
+</html>
